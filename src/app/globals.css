@@ -1,6 +1,24 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --font-inter: var(--font-inter);
+  --font-geist: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+@utility font-geist {
+  font-family: var(--font-geist);
+}
+
+@utility font-inter {
+  font-family: var(--font-inter);
+}
+
+@utility font-mono {
+  font-family: var(--font-mono);
+}
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -119,4 +137,7 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.font-cooper {
+  font-family: var(--font-cooper), serif;
 }
