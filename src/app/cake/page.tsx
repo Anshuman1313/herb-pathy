@@ -23,17 +23,26 @@ export default function Cake() {
 
     }, [])
 
-
+    const cakeImages = ["cake.png","cupcake2.png","mail-server.png","8.png","18.png"]
 
     return (
         <>
+        <div id="yuji"></div>
             {/* There is move up button */}
-            <a data-scroll-to data-scroll-to-duration="2.5" href="#sukuna" className="rounded-full bg-blue-400 size-10 text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
+            <a data-scroll-to data-scroll-to-duration="2.5" href="#yuji" className="rounded-full bg-blue-400 size-10 text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
 
             </a>
             <div className="h-screen w-full p-5">
-                <div className="h-full w-full bg-gray-100 rounded-xl flex flex-col justify-center items-center">
-                    <h1 className="font-mono text-blue-600 text- font-medium"> DESIGN</h1>
+                <div className="h-full w-full bg-background rounded-xl flex flex-col justify-center items-center">
+                    <div className="flex gap-5">
+                    {cakeImages.map((url,i)=>(
+
+                        <Image src={`/cake/${url}`}  key={i} alt="cupcake" width={120} height={120} className="bg-white" />
+                    )
+
+                    )}
+                    </dirv>
+                    <h1 className="font-mono text-pink-600 text- font-medium"> DESIGN</h1>
              <h1 className="font-cooper text-[38px] text-[#292524] font-extralight">
                 Cake Page Heading
             </h1>
@@ -42,7 +51,15 @@ export default function Cake() {
             </h1>
                 </div>
             </div>
-            <div className="h-screen bg-gray-100 rounded-xl m-5 flex flex-col justify-center items-center">
+            <div className="h-screen bg-background rounded-xl m-5 flex flex-col justify-center items-center">
+                  <div className="flex gap-5 flex-wrap">
+                    {Array.from({length: 16}).map((url,i)=>(
+
+                        <Image src={`/cake/${i+1}.png`} key={i} alt="cupcake" width={120} height={120} />
+                    )
+
+                    )}
+                    </div>
 
             <h1 className="font-cooper text-[38px] text-[#292524] font-extralight">
                 Cake Page Heading
