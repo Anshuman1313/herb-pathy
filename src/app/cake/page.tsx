@@ -1,10 +1,13 @@
 "use client"
 import MovingPhotoShowcase from "@/components/MotionDev/MovingPhotoShowcase";
 import { useEffect, useRef } from "react";
-import { motion } from "motion/react"
+import { motion, useScroll } from "motion/react"
 import styles from '@/styles/Home.module.css';
 import { MoveUp } from "lucide-react";
 import Image from "next/image";
+import Footer, { Section1 } from "@/components/MotionDev/Footer"
+import Nav1 from "@/components/MotionDev/Nav1";
+import Hero from "@/components/CakeComponents/Hero";
 export default function Cake() {
     useEffect(() => {
 
@@ -22,26 +25,38 @@ export default function Cake() {
         )()
 
     }, [])
-
+    const ConstraintRef1 = useRef(null)
     const cakeImages = ["cake.png","cupcake2.png","mail-server.png","8.png","18.png"]
 
     return (
         <>
         <div id="yuji"></div>
             {/* There is move up button */}
-            <a data-scroll-to data-scroll-to-duration="2.5" href="#yuji" className="rounded-full bg-blue-400 size-10 text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
+            <a data-scroll-to data-scroll-to-duration="2.5" href="#yuji" className="rounded-full bg-blue-400 size-10  text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
 
             </a>
+            <Hero/>
+            {/* <Nav1/> */}
+            
+            <div ref={ConstraintRef1} className="h-screen bg-background w-full  flex justify-center items-center flex-col">
+                <div><h1 className="text-4xl ">Baked with Love, Crafted for Dreams</h1></div>
+                <motion.div drag dragConstraints={ConstraintRef1} className="cursor-pointer size-150 relative bg-blue-50" >
+
+                <Image src={"/cake/chefcake.png"} alt="chefcake"  fill/>
+                </motion.div>
+            </div>
+            <div className="h-screen bg-background w-full  flex justify-center items-center">
+            </div>
             <div className="h-screen w-full p-5">
                 <div className="h-full w-full bg-background rounded-xl flex flex-col justify-center items-center">
                     <div className="flex gap-5">
                     {cakeImages.map((url,i)=>(
-
+                        
                         <Image src={`/cake/${url}`}  key={i} alt="cupcake" width={120} height={120} className="bg-white" />
                     )
-
-                    )}
-                    </dirv>
+                    
+                )}
+                    </div>
                     <h1 className="font-mono text-pink-600 text- font-medium"> DESIGN</h1>
              <h1 className="font-cooper text-[38px] text-[#292524] font-extralight">
                 Cake Page Heading
@@ -51,6 +66,8 @@ export default function Cake() {
             </h1>
                 </div>
             </div>
+                <Section1/>
+              <Footer/>
             <div className="h-screen bg-background rounded-xl m-5 flex flex-col justify-center items-center">
                   <div className="flex gap-5 flex-wrap">
                     {Array.from({length: 16}).map((url,i)=>(

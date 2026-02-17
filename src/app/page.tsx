@@ -1,23 +1,22 @@
 import HeroSection from "@/components/Landing/HeroSection";
+import {RadialGradient} from "@/components/Landing/RadialGradient";
 import Navbar from "@/components/Layout/Navbar";
 
 export default function Home() {
   return (
     <>
-      <div className=" relative font-sans">
+      <div className=" relative font-sans ">
+        <RadialGradient/>
         <Navbar/>
-        {/* <div className="h-px w-full bg-red-300 absolute top-10 inset-x-0"></div>
-        <div className="w-px h-full bg-red-900 absolute top-0 left-[5%] inset-y-0"></div>
-        <div className="w-px h-full bg-red-900 absolute top-0 left-[95%] inset-y-0"></div> */}
-
-       
         <div className="h-screen w-full pt-20 px-[2%]">
         <HeroSection/>
 
         </div>
-        <div className="h-screen w-full  py-20 px-[8%]">
-        <div className="h-screen w-full bg-red-400 rounded-xl">
+        <div className="h-screen w-full  px-[20%] mt-20">
+          <div className="h-full w-full rounded-xl bg-blue-400"></div>
         </div>
+        <div className="h-screen w-full  px-[2%]  mt-20 ">
+          <div className="h-full w-full rounded-xl bg-blue-400"></div>
         </div>
       
       </div>
