@@ -1,0 +1,36 @@
+how to add fonts 
+download the fonts there are 3 steps after that 
+1) go to fonts.ts
+import localFont from "next/font/local";
+
+export const cooper = localFont({
+  src: "./fonts/cooperltbtlight.ttf",
+  variable: "--font-cooper",
+  weight: "300",
+});
+export const milkshake = localFont({
+  src: "./fonts/milkshake.otf",
+  variable: "--font-milkshake",
+  weight: "300",
+});
+
+
+add your fonts then 
+go to global.css add the fonts to that 
+.font-milkshake {
+  font-family: var(--font-milkshake), serif;
+}
+
+then got to the page or section you want the wants - in this case i want it in the cake route so i added it inside layout of cake
+
+import { cooper } from "../fonts";
+import { milkshake } from "../fonts";
+
+export default function CakeLayout({ children } : {children: React.ReactNode}) {
+  return (
+    <section className={`${cooper.variable} ${milkshake.variable}`}>
+      {children}
+    </section>
+  );
+}
+something like this

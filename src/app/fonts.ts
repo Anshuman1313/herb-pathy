@@ -5,3 +5,8 @@ export const cooper = localFont({
   variable: "--font-cooper",
   weight: "300",
 });
+export const milkshake = localFont({
+  src: "./fonts/milkshake.otf",
+  variable: "--font-milkshake",
+  weight: "300",
+});

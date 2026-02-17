@@ -23,6 +23,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-cake: var(--background-cake);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -39,6 +40,7 @@
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-heading-cake: var(--heading-cake);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -64,6 +66,7 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
+  --background-cake: oklch(0.950 0.042 76.456);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -81,7 +84,7 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-1: rgba(63, 33, 23, 0.05);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
@@ -94,10 +97,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --heading-cake: oklch(0.285 0.050 39.139);
 }
 
 .dark {
   --background: oklch(0.145 0 0);
+  --background-cake: oklch(95.1% 0.03606 87.79);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -128,6 +133,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --heading-cake: oklch(28.545% 0.04976 39.113);
+
 }
 
 @layer base {
@@ -140,4 +147,7 @@
 }
 .font-cooper {
   font-family: var(--font-cooper), serif;
+}
+.font-milkshake {
+  font-family: var(--font-milkshake), serif;
 }
