@@ -38,13 +38,7 @@ export default function Cake() {
             <Hero/>
             {/* <Nav1/> */}
             
-            <div ref={ConstraintRef1} className="h-screen bg-background w-full  flex justify-center items-center flex-col">
-                <div><h1 className="text-4xl ">Baked with Love, Crafted for Dreams</h1></div>
-                <motion.div drag dragConstraints={ConstraintRef1} className="cursor-pointer size-150 relative bg-blue-50" >
-
-                <Image src={"/cake/chefcake.png"} alt="chefcake"  fill/>
-                </motion.div>
-            </div>
+         
             <div className="h-screen bg-background w-full  flex justify-center items-center">
             </div>
             <div className="h-screen w-full p-5">

@@ -61,6 +61,10 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --ease-in-out-quad: var(--in-out-quad);
+  --ease-in-out-cubic: var(--in-out-cubic);
+  --ease-in-out-quart: var(--in-out-quart);
+  
 }
 
 :root {
@@ -98,6 +102,10 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --heading-cake: oklch(0.285 0.050 39.139);
+ 
+  --in-out-quad: cubic-bezier(.455, .03, .515, .955);
+  --in-out-cubic: cubic-bezier(.645, .045, .355, 1);
+  --in-out-quart: cubic-bezier(.77, 0, .175, 1);
 }
 
 .dark {
