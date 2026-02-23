@@ -8,6 +8,11 @@ import Image from "next/image";
 import Footer, { Section1 } from "@/components/MotionDev/Footer"
 import Nav1 from "@/components/MotionDev/Nav1";
 import Hero from "@/components/CakeComponents/Hero";
+import { Cta3 } from "@/components/CakeComponents/ResponsiveCta";
+import MenuDots from "@/components/CakeComponents/MenuDots";
+import { GlowCards } from "@/components/CakeComponents/GlowCards";
+import Hero2 from "@/components/CakeComponents/Hero2";
+import { CtaCake } from "@/components/CakeComponents/Cta";
 export default function Cake() {
     useEffect(() => {
 
@@ -26,58 +31,93 @@ export default function Cake() {
 
     }, [])
     const ConstraintRef1 = useRef(null)
-    const cakeImages = ["cake.png","cupcake2.png","mail-server.png","8.png","18.png"]
+    const cakeImages = ["cake.png", "cupcake2.png", "mail-server.png", "8.png", "18.png"]
 
     return (
         <>
-        <div id="yuji"></div>
+            <div id="yuji"></div>
             {/* There is move up button */}
-            <a data-scroll-to data-scroll-to-duration="2.5" href="#yuji" className="rounded-full bg-blue-400 size-10  text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
+            {/* <a data-scroll-to data-scroll-to-duration="2.5" href="#yuji" className="rounded-full bg-blue-400 size-10  text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
 
-            </a>
-            <Hero/>
+            </a> */}
+            <Hero2 />
+
+            {/* <Hero /> */}
             {/* <Nav1/> */}
-            
-         
-            <div className="h-screen bg-background w-full  flex justify-center items-center">
+
+
+            <div className="h-screen bg-background w-full  flex gap-20 justify-center items-center">
+                <MenuDots />
+                <CtaCake />
+                <div className="flex flex-col justify-center items-center">
+
+
+                    <Cta3
+                        variant="expand"
+                        containerClass="h-18 w-53 border  p-1 bg-gray-100 inset-shadow-sm border-1 shadow-sm"
+                        textClass="text-xl font-cooper bg-background shadow font-semibold  h-full"
+                        circleClass="size-16 shadow"
+                        leftcircle="bg-blue-300"
+                        rightcircle="bg-rose-300"
+                        lefthoverSize="group-hover:w-16 "
+                        iconClass="size-7 text-foreground/80"
+                    />
+                    <span></span>
+                </div>
+                <div>
+
+                    <Cta3
+                        variant="expand"
+                        containerClass="h-16 w-53 bg-transparent"
+                        textClass="text-xl font-cooper bg-gray-100 font-semibold  h-full "
+                        circleClass="size-16 "
+                        leftcircle="bg-blue-300"
+                        rightcircle="bg-rose-300"
+                        lefthoverSize="group-hover:w-16"
+                        iconClass="size-7 text-foreground/80"
+                    />
+                </div>
+                <div className="bg-foreground">
+
+                </div>
             </div>
             <div className="h-screen w-full p-5">
                 <div className="h-full w-full bg-background rounded-xl flex flex-col justify-center items-center">
                     <div className="flex gap-5">
-                    {cakeImages.map((url,i)=>(
-                        
-                        <Image src={`/cake/${url}`}  key={i} alt="cupcake" width={120} height={120} className="bg-white" />
-                    )
-                    
-                )}
+                        {cakeImages.map((url, i) => (
+
+                            <Image src={`/cake/${url}`} key={i} alt="cupcake" width={120} height={120} className="bg-white" />
+                        )
+
+                        )}
                     </div>
                     <h1 className="font-mono text-pink-600 text- font-medium"> DESIGN</h1>
-             <h1 className="font-cooper text-[38px] text-[#292524] font-extralight">
-                Cake Page Heading
-            </h1>
-            <h1 className="font-geist font-normal text-[18px] text-[#292524] ">
-                Cake Page Subheading we are here to make the cake website
-            </h1>
+                    <h1 className="font-cooper text-[38px] text-[#292524] font-extralight">
+                        Cake Page Heading
+                    </h1>
+                    <h1 className="font-geist font-normal text-[18px] text-[#292524] ">
+                        Cake Page Subheading we are here to make the cake website
+                    </h1>
                 </div>
             </div>
-                <Section1/>
-              <Footer/>
+            <Section1 />
+            <Footer />
             <div className="h-screen bg-background rounded-xl m-5 flex flex-col justify-center items-center">
-                  <div className="flex gap-5 flex-wrap">
-                    {Array.from({length: 16}).map((url,i)=>(
+                <div className="flex gap-5 flex-wrap">
+                    {Array.from({ length: 16 }).map((url, i) => (
 
-                        <Image src={`/cake/${i+1}.png`} key={i} alt="cupcake" width={120} height={120} />
+                        <Image src={`/cake/${i + 1}.png`} key={i} alt="cupcake" width={120} height={120} />
                     )
 
                     )}
-                    </div>
+                </div>
 
-            <h1 className="font-cooper text-[38px] text-[#292524] font-extralight">
-                Cake Page Heading
-            </h1>
-            <h1 className="font-geist font-normal text-[18px] text-[#292524] ">
-                Cake Page Subheading we are here to make the cake website
-            </h1>
+                <h1 className="font-cooper text-[38px] text-[#292524] font-extralight">
+                    Cake Page Heading
+                </h1>
+                <h1 className="font-geist font-normal text-[18px] text-[#292524] ">
+                    Cake Page Subheading we are here to make the cake website
+                </h1>
             </div>
 
 

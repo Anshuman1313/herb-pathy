@@ -41,6 +41,7 @@
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
   --color-heading-cake: var(--heading-cake);
+  --color-subheading-cake: var(--subheading-cake);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -102,6 +103,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --heading-cake: oklch(0.285 0.050 39.139);
+  --subheading-cake: oklch(0.443 0.052 43.262);
  
   --in-out-quad: cubic-bezier(.455, .03, .515, .955);
   --in-out-cubic: cubic-bezier(.645, .045, .355, 1);
@@ -110,7 +112,7 @@
 
 .dark {
   --background: oklch(0.145 0 0);
-  --background-cake: oklch(95.1% 0.03606 87.79);
+  --background-cake: oklch(0.95 0.018 70.709);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -141,7 +143,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-  --heading-cake: oklch(28.545% 0.04976 39.113);
+  --heading-cake: oklch(0.333 0.056 34.908);
+  --subheading-cake: oklch(0.443 0.052 43.262);
 
 }
 
@@ -158,4 +161,7 @@
 }
 .font-milkshake {
   font-family: var(--font-milkshake), serif;
+}
+.font-roslindale {
+  font-family: var(--font-roslindale), serif;
 }
