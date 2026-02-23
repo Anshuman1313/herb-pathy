@@ -10,3 +10,7 @@ export const milkshake = localFont({
   variable: "--font-milkshake",
   weight: "300",
 });
+export const roslindale = localFont({
+  src: "./fonts/Roslindale-DisplayNarrowSemiBold-Testing.ttf",
+  variable: "--font-roslindale",
+});
