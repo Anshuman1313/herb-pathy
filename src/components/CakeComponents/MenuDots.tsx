@@ -38,7 +38,7 @@ export default function MenuDots() {
         <motion.div
           initial="initial"
           whileHover="hover"
-          className="size-15 bg-gray-100 rounded-full relative flex justify-center items-center cursor-pointer"
+          className="size-18 bg-gray-100 rounded-full relative flex justify-center items-center cursor-pointer"
         >
           <motion.div
             variants={clipVariants}

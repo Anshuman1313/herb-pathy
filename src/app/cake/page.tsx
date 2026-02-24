@@ -12,7 +12,7 @@ import { Cta3 } from "@/components/CakeComponents/ResponsiveCta";
 import MenuDots from "@/components/CakeComponents/MenuDots";
 import { GlowCards } from "@/components/CakeComponents/GlowCards";
 import Hero2 from "@/components/CakeComponents/Hero2";
-import { CtaCake } from "@/components/CakeComponents/Cta";
+import { CaramelButton, CtaCake } from "@/components/CakeComponents/Cta";
 export default function Cake() {
     useEffect(() => {
 
@@ -49,7 +49,8 @@ export default function Cake() {
             <div className="h-screen bg-background w-full  flex gap-20 justify-center items-center">
                 <MenuDots />
                 <CtaCake />
-                <div className="flex flex-col justify-center items-center">
+                <CaramelButton children="Order Your Dream Cake"/>
+                <div className="flex hidden flex-col justify-center items-center">
 
 
                     <Cta3
