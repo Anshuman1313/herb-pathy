@@ -1,11 +1,14 @@
-import React from 'react'
+"use client"
+import FloatingBackgroundImages from './FloadtingBgImages'
+
 
 const Hero2 = () => {
   return (
     <>
-    <div className="min-h-dvh bg-background-cake  w-full overflow-hidden ">
+    <div className="min-h-dvh bg-[linear-gradient(135deg,#eacbaa80,#ebe3d7)]  w-full overflow-hidden ">
         <div className=' w-full h-dvh flex justify-center items-center  '>
-                <div className='flex flex-col justify-center items-center  pt-15'>
+      <FloatingBackgroundImages/>
+                <div className='flex flex-col justify-center items-center  pt-15 z-10'>
                   <div className='heading text-9xl text-center font-roslindale text-heading-cake'>
 
                     <h1>Every Bite Feels Like</h1>
