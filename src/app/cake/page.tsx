@@ -14,6 +14,7 @@ import { GlowCards } from "@/components/CakeComponents/GlowCards";
 import Hero2 from "@/components/CakeComponents/Hero2";
 import { CaramelButton, CtaCake } from "@/components/CakeComponents/Cta";
 import Nav from "@/components/CakeComponents/Nav";
+import { RadialGradient, RadialGradient2 } from "@/components/Landing/RadialGradient";
 export default function Cake() {
     useEffect(() => {
 
@@ -37,12 +38,17 @@ export default function Cake() {
     return (
         <>
             <div id="yuji relative"></div>
+            {/* <RadialGradient/> */}
+            {/* <RadialGradient2/> */}
             {/* There is move up button */}
             {/* <a data-scroll-to data-scroll-to-duration="2.5" href="#yuji" className="rounded-full bg-blue-400 size-10  text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
 
             </a> */}
+            
+
             <Nav/>
             <Hero2 />
+            
 
             {/* <Hero /> */}
             {/* <Nav1/> */}

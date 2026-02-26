@@ -464,8 +464,8 @@ export default function FloatingBackgroundImages() {
                     animate={{
                         scale: 1,
                         opacity: 0.9,
-                        x: [0, img.floatX, 2],
-                        y: [0, img.floatY, 2],
+                        x: [0, img.floatX, 3],
+                        y: [0, img.floatY, ],
                         rotateX: [0, 3, -3, 0],
                         rotateY: [0, -4, 4, 0],
                     }}
