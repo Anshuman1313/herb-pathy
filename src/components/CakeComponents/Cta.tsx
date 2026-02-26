@@ -1,5 +1,5 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import React from 'react'
+import React, { ReactHTMLElement } from 'react'
 
 export const Cta = () => {
   return (
@@ -120,7 +120,7 @@ export const CaramelButton: React.FC<CaramelButtonProps> = ({
         overflow-hidden
         transition-[scale] duration-300 ease-in-out
         active:scale-[0.97]
-        cursor-pointer
+        cursor-pointer 
         ${className}
       `}
       style={{

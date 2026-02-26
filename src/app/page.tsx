@@ -5,8 +5,8 @@ import Navbar from "@/components/Layout/Navbar";
 export default function Home() {
   return (
     <>
+        <RadialGradient />
       <div className=" relative font-sans ">
-        <RadialGradient/>
         <Navbar/>
         <div className="h-screen w-full pt-20 px-[2%]">
         <HeroSection/>

@@ -1,15 +1,20 @@
 "use client"
+import { GrainGradient } from '@paper-design/shaders-react'
 import { CaramelButton } from './Cta'
 import FloatingBackgroundImages from './FloadtingBgImages'
+import { RadialGradient2 } from '../Landing/RadialGradient'
 
 
 const Hero2 = () => {
   return (
     <>
-      <div className="min-h-dvh bg-[linear-gradient(135deg,#eacbaa80,#ebe3d7)]  w-full overflow-hidden ">
-        <div className=' w-full h-dvh flex justify-center items-center  '>
+    {/* bg-[linear-gradient(135deg,#eacbaa80,#ebe3d7)]  */}
+    
+      <div className="min-h-dvh  w-full overflow-hidden ">
+        <div className=' w-full min-h-dvh flex justify-center items-center  '>
+          <RadialGradient2/>
           <FloatingBackgroundImages />
-          <div className='flex flex-col justify-center items-center  pt-22 z-10'>
+          <div className='flex flex-col justify-center items-center  pt-30 z-10'>
             <div className='heading text-9xl text-center font-roslindale text-heading-cake'>
 
               <h1>Every Bite Feels Like</h1>
