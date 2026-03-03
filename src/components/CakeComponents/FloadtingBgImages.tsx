@@ -9,13 +9,21 @@ type FloatingImage = {
     src: string;
     size: number;
     top: string;
-    left: string;
+    right?: string;
+    left?: string;
     duration: number;
     ease: "easeOut" | "easeInOut";
     floatX: number;
     floatY: number;
     floatDurationX: number;
     floatDurationY: number;
+};
+type Tier = "large" | "medium" | "small";
+type HeroLayoutItem = {
+  top: string;
+  right: string;
+  size: number;
+  tier: Tier; // ← THIS is important
 };
 
 export default function FloatingBackgroundImages() {
@@ -45,156 +53,319 @@ export default function FloatingBackgroundImages() {
         "/hero/9.png",
         "/hero/10.png",
         "/hero/11.png",
-
-
-        "/hero/13.png",
-        "/hero/10.png",
-        "/hero/11.png",
         "/hero/12.png",
+        "/hero/13.png",
+        "/hero/14-removebg-preview.png",
+        "/hero/15-removebg-preview.png",
+        "/hero/18-modified.png",
+        "/hero/19-modified.png",
+        "/hero/20-modified.png",
+        "/hero/21-modified.png",
     ];
+    // 🧠 12 Fixed Luxury Layout Positions
+     const HERO_LAYOUT:HeroLayoutItem[] = [
+        { top: "10%", right: "3%", size: 180, tier: "large" },
+        { top: "41%", right: "24%", size: 180, tier: "large" },
+        { top: "65%", right: "4%", size: 180, tier: "large" },
+        { top: "65%", right: "84%", size: 180, tier: "large" },
+        { top: "3%", right: "84%", size: 180, tier: "large" },
 
-    //fixed size and movement 
+        { top: "13%", right: "79%", size: 150, tier: "medium" },
+        { top: "13%", right: "59%", size: 150, tier: "medium" },
+        { top: "38%", right: "60%", size: 160, tier: "medium" },
+        { top: "77%", right: "72%", size: 150, tier: "medium" },
+        { top: "52%", right: "76%", size: 140, tier: "medium" },
+        { top: "52%", right: "66%", size: 140, tier: "medium" },
+        { top: "52%", right: "86%", size: 140, tier: "medium" },
+        { top: "52%", right: "56%", size: 140, tier: "medium" },
+
+        { top: "6%", right: "26%", size: 110, tier: "small" },
+        { top: "30%", right: "89%", size: 100, tier: "small" },
+        { top: "44%", right: "10%", size: 120, tier: "small" },
+        { top: "82%", right: "22%", size: 110, tier: "small" },
+        { top: "65%", right: "20%", size: 100, tier: "small" },
+    ];
+    //  You choose which images go where (by index from HERO_IMAGES)
+
+ const HERO_IMAGE_TIERS = {
+  large: [16, 13,15,18,17],       // These indexes will be LARGE
+  medium: [12, 4, 6,0,1, 2,3,14],   // These will be MEDIUM
+  small: [3, 5, 2, 10,4] // These will be SMALL
+};
+
+    //some images also hardcoded 
     useEffect(() => {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
+  const generated: FloatingImage[] = [];
 
-        const generated: FloatingImage[] = [];
+  // Extract actual image URLs based on index
+  const tierImages = {
+    large: HERO_IMAGE_TIERS.large.map(i => HERO_IMAGES[i]),
+    medium: HERO_IMAGE_TIERS.medium.map(i => HERO_IMAGES[i]),
+    small: HERO_IMAGE_TIERS.small.map(i => HERO_IMAGES[i]),
+  };
 
-        // 🔀 Shuffle images so order is random every mount
-        const shuffledImages = shuffleArray(HERO_IMAGES);
+  // Optional: Shuffle inside each tier
+//   tierImages.large = shuffleArray(tierImages.large);
+//   tierImages.medium = shuffleArray(tierImages.medium);
+//   tierImages.small = shuffleArray(tierImages.small);
 
-        const totalImages = shuffledImages.length;
+  const tierCounters = {
+    large: 0,
+    medium: 0,
+    small: 0,
+  };
 
-        // ---- 3 SIZE TIERS ----
-        const largeCount = 3;
-        const mediumCount = 4;
-        const smallCount = totalImages - largeCount - mediumCount;
+  HERO_LAYOUT.forEach((layout, index) => {
+    const tier = layout.tier;
 
-        function isTooClose(
-            newX: number,
-            newY: number,
-            newSize: number
-        ) {
-            for (const img of generated) {
-                const existingX = parseFloat(img.left);
-                const existingY = parseFloat(img.top);
+    const imageSrc =
+      tierImages[tier][tierCounters[tier]++];
 
-                const dx = newX - existingX;
-                const dy = newY - existingY;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+    let floatX = 0;
+    let floatY = 0;
+    let floatDurationX = 0;
+    let floatDurationY = 0;
 
-                const minDistance =
-                    ((newSize + img.size) / 2) * 0.85;
+    // 🎯 Controlled movement per tier
+    if (tier === "large") {
+      floatX = (Math.random() - 0.5) * 50;
+      floatY = (Math.random() - 0.5) * 50;
+      floatDurationX = 10 + Math.random() * 4;
+      floatDurationY = 12 + Math.random() * 4;
+    }
 
-                if (distance < minDistance) return true;
-            }
-            return false;
-        }
+    if (tier === "medium") {
+      floatX = (Math.random() - 0.5) * 35;
+      floatY = (Math.random() - 0.5) * 35;
+      floatDurationX = 7 + Math.random() * 4;
+      floatDurationY = 9 + Math.random() * 4;
+    }
 
-        let idCounter = 0;
+    if (tier === "small") {
+      floatX = (Math.random() - 0.5) * 25;
+      floatY = (Math.random() - 0.5) * 25;
+      floatDurationX = 5 + Math.random() * 3;
+      floatDurationY = 6 + Math.random() * 3;
+    }
 
-        // 🔴 LARGE (Foreground Anchors)
-        for (let i = 0; i < largeCount; i++) {
-            let attempts = 0;
-            let x = 0;
-            let y = 0;
+    generated.push({
+      id: index,
+      src: imageSrc,
+      size: layout.size,
+      top: layout.top,
+      left: layout.right,
+      duration: 2,
+      ease: "easeOut",
+      floatX,
+      floatY,
+      floatDurationX,
+      floatDurationY,
+    });
+  });
 
-            const size = 170 + Math.random() * 40; // 160–200px
+  setImages(generated);
+  setMounted(true);
+}, []);
 
-            do {
-                x = Math.random() * (width - size);
-                y = Math.random() * (height - size);
-                attempts++;
-            } while (isTooClose(x, y, size) && attempts < 60);
 
-            generated.push({
-                id: idCounter,
-                src: shuffledImages[idCounter],
-                size,
-                top: `${y}px`,
-                left: `${x}px`,
-                duration: 2,
-                ease: "easeOut",
+    // //for hardcoded placement of images 
+    // useEffect(() => {
+    //     const generated: FloatingImage[] = [];
 
-                // Heavy / slower float
-                floatX: (Math.random() - 0.5) * 50,
-                floatY: (Math.random() - 0.5) * 50,
-                floatDurationX: 10 + Math.random() * 4,
-                floatDurationY: 12 + Math.random() * 4,
-            });
+    //     // Shuffle and take only 12
+    //     const shuffledImages = shuffleArray(HERO_IMAGES).slice(0, 12);
 
-            idCounter++;
-        }
+    //     HERO_LAYOUT.forEach((layout, index) => {
+    //         const tier = layout.tier;
 
-        // 🟡 MEDIUM (Balanced Layer)
-        for (let i = 0; i < mediumCount; i++) {
-            let attempts = 0;
-            let x = 0;
-            let y = 0;
+    //         let floatX = 0;
+    //         let floatY = 0;
+    //         let floatDurationX = 0;
+    //         let floatDurationY = 0;
 
-            const size = 140 + Math.random() * 30; // 70–100px
+    //         // 🎯 Movement logic based on tier
+    //         if (tier === "large") {
+    //             floatX = (Math.random() - 0.5) * 50;
+    //             floatY = (Math.random() - 0.5) * 50;
+    //             floatDurationX = 10 + Math.random() * 4;
+    //             floatDurationY = 12 + Math.random() * 4;
+    //         }
 
-            do {
-                x = Math.random() * (width - size);
-                y = Math.random() * (height - size);
-                attempts++;
-            } while (isTooClose(x, y, size) && attempts < 60);
+    //         if (tier === "medium") {
+    //             floatX = (Math.random() - 0.5) * 35;
+    //             floatY = (Math.random() - 0.5) * 35;
+    //             floatDurationX = 7 + Math.random() * 4;
+    //             floatDurationY = 9 + Math.random() * 4;
+    //         }
 
-            generated.push({
-                id: idCounter,
-                src: shuffledImages[idCounter],
-                size,
-                top: `${y}px`,
-                left: `${x}px`,
-                duration: 2,
-                ease: "easeOut",
+    //         if (tier === "small") {
+    //             floatX = (Math.random() - 0.5) * 25;
+    //             floatY = (Math.random() - 0.5) * 25;
+    //             floatDurationX = 5 + Math.random() * 3;
+    //             floatDurationY = 6 + Math.random() * 3;
+    //         }
 
-                // Natural float
-                floatX: (Math.random() - 0.5) * 35,
-                floatY: (Math.random() - 0.5) * 35,
-                floatDurationX: 7 + Math.random() * 4,
-                floatDurationY: 9 + Math.random() * 4,
-            });
+    //         generated.push({
+    //             id: index,
+    //             src: shuffledImages[index],
+    //             size: layout.size,
+    //             top: layout.top,
+    //             left: layout.right,
+    //             duration: 2,
+    //             ease: "easeOut",
+    //             floatX :0,
+    //             floatY: 0,
+    //             floatDurationX: 0,
+    //             floatDurationY: 0,
+    //         });
+    //     });
 
-            idCounter++;
-        }
+    //     setImages(generated);
+    //     setMounted(true);
+    // }, []);
 
-        // 🔵 SMALL (Background Texture)
-        for (let i = 0; i < smallCount; i++) {
-            let attempts = 0;
-            let x = 0;
-            let y = 0;
+    // //fixed size and movement 
+    // useEffect(() => {
+    //     const width = window.innerWidth;
+    //     const height = window.innerHeight;
 
-            const size = 100 + Math.random() * 20; // 100–120px
+    //     const generated: FloatingImage[] = [];
 
-            do {
-                x = Math.random() * (width - size);
-                y = Math.random() * (height - size);
-                attempts++;
-            } while (isTooClose(x, y, size) && attempts < 60);
+    //     // 🔀 Shuffle images so order is random every mount
+    //     const shuffledImages = shuffleArray(HERO_IMAGES);
 
-            generated.push({
-                id: idCounter,
-                src: shuffledImages[idCounter],
-                size,
-                top: `${y}px`,
-                left: `${x}px`,
-                duration: 2,
-                ease: "easeOut",
+    //     const totalImages = shuffledImages.length;
 
-                // Lighter / slightly faster
-                floatX: (Math.random() - 0.5) * 25,
-                floatY: (Math.random() - 0.5) * 25,
-                floatDurationX: 5 + Math.random() * 3,
-                floatDurationY: 6 + Math.random() * 3,
-            });
+    //     // ---- 3 SIZE TIERS ----
+    //     const largeCount = 3;
+    //     const mediumCount = 4;
+    //     const smallCount = totalImages - largeCount - mediumCount;
 
-            idCounter++;
-        }
+    //     function isTooClose(
+    //         newX: number,
+    //         newY: number,
+    //         newSize: number
+    //     ) {
+    //         for (const img of generated) {
+    //             const existingX = parseFloat(img.left);
+    //             const existingY = parseFloat(img.top);
 
-        setImages(generated);
-        setMounted(true);
-    }, []);
+    //             const dx = newX - existingX;
+    //             const dy = newY - existingY;
+    //             const distance = Math.sqrt(dx * dx + dy * dy);
+
+    //             const minDistance =
+    //                 ((newSize + img.size) / 2) * 0.85;
+
+    //             if (distance < minDistance) return true;
+    //         }
+    //         return false;
+    //     }
+
+    //     let idCounter = 0;
+
+    //     // 🔴 LARGE (Foreground Anchors)
+    //     for (let i = 0; i < largeCount; i++) {
+    //         let attempts = 0;
+    //         let x = 0;
+    //         let y = 0;
+
+    //         const size = 170 + Math.random() * 40; // 160–200px
+
+    //         do {
+    //             x = Math.random() * (width - size);
+    //             y = Math.random() * (height - size);
+    //             attempts++;
+    //         } while (isTooClose(x, y, size) && attempts < 60);
+
+    //         generated.push({
+    //             id: idCounter,
+    //             src: shuffledImages[idCounter],
+    //             size,
+    //             top: `${y}px`,
+    //             left: `${x}px`,
+    //             duration: 2,
+    //             ease: "easeOut",
+
+    //             // Heavy / slower float
+    //             floatX: (Math.random() - 0.5) * 50,
+    //             floatY: (Math.random() - 0.5) * 50,
+    //             floatDurationX: 10 + Math.random() * 4,
+    //             floatDurationY: 12 + Math.random() * 4,
+    //         });
+
+    //         idCounter++;
+    //     }
+
+    //     // 🟡 MEDIUM (Balanced Layer)
+    //     for (let i = 0; i < mediumCount; i++) {
+    //         let attempts = 0;
+    //         let x = 0;
+    //         let y = 0;
+
+    //         const size = 140 + Math.random() * 30; // 70–100px
+
+    //         do {
+    //             x = Math.random() * (width - size);
+    //             y = Math.random() * (height - size);
+    //             attempts++;
+    //         } while (isTooClose(x, y, size) && attempts < 60);
+
+    //         generated.push({
+    //             id: idCounter,
+    //             src: shuffledImages[idCounter],
+    //             size,
+    //             top: `${y}px`,
+    //             left: `${x}px`,
+    //             duration: 2,
+    //             ease: "easeOut",
+
+    //             // Natural float
+    //             floatX: (Math.random() - 0.5) * 35,
+    //             floatY: (Math.random() - 0.5) * 35,
+    //             floatDurationX: 7 + Math.random() * 4,
+    //             floatDurationY: 9 + Math.random() * 4,
+    //         });
+
+    //         idCounter++;
+    //     }
+
+    //     // 🔵 SMALL (Background Texture)
+    //     for (let i = 0; i < smallCount; i++) {
+    //         let attempts = 0;
+    //         let x = 0;
+    //         let y = 0;
+
+    //         const size = 100 + Math.random() * 20; // 100–120px
+
+    //         do {
+    //             x = Math.random() * (width - size);
+    //             y = Math.random() * (height - size);
+    //             attempts++;
+    //         } while (isTooClose(x, y, size) && attempts < 60);
+
+    //         generated.push({
+    //             id: idCounter,
+    //             src: shuffledImages[idCounter],
+    //             size,
+    //             top: `${y}px`,
+    //             left: `${x}px`,
+    //             duration: 2,
+    //             ease: "easeOut",
+
+    //             // Lighter / slightly faster
+    //             floatX: (Math.random() - 0.5) * 25,
+    //             floatY: (Math.random() - 0.5) * 25,
+    //             floatDurationX: 5 + Math.random() * 3,
+    //             floatDurationY: 6 + Math.random() * 3,
+    //         });
+
+    //         idCounter++;
+    //     }
+
+    //     setImages(generated);
+    //     setMounted(true);
+    // }, []);
 
 
     // Runs ONLY on client after hydration
@@ -465,7 +636,7 @@ export default function FloatingBackgroundImages() {
                         scale: 1,
                         opacity: 0.9,
                         x: [0, img.floatX, 3],
-                        y: [0, img.floatY, ],
+                        y: [0, img.floatY,],
                         rotateX: [0, 3, -3, 0],
                         rotateY: [0, -4, 4, 0],
                     }}
