@@ -1,3 +1,4 @@
+import { Cta4 } from "@/components/CakeComponents/Cta";
 import HeroSection from "@/components/Landing/HeroSection";
 import {RadialGradient} from "@/components/Landing/RadialGradient";
 import Navbar from "@/components/Layout/Navbar";
@@ -5,6 +6,7 @@ import Navbar from "@/components/Layout/Navbar";
 export default function Home() {
   return (
     <>
+    <Cta4/>
         <RadialGradient />
       <div className=" relative font-sans ">
         <Navbar/>

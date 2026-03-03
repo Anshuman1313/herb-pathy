@@ -1,5 +1,7 @@
+"use client"
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import React, { ReactHTMLElement } from 'react'
+import {motion} from 'motion/react'
 
 export const Cta = () => {
   return (
@@ -176,3 +178,17 @@ export const CaramelButton: React.FC<CaramelButtonProps> = ({
     </button>
   );
 };
+
+export const Cta4 = () =>{
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox='0 0 100 50'   fill="none">
+
+<motion.path animate={{ pathLength: [0,1]}} transition={{ duration: 3 , ease: "easeInOut", repeat: Infinity  }} d="M66 0 30 0V0Q23.043.018 23 6L23 39Q23 45 16 45L0 45 "  stroke="red" strokeWidth="1" stroke-linecap="round"> 
+
+</motion.path>
+<motion.path animate={{ pathLength: [0,1]}} transition={{ duration: 2 , ease: "easeInOut", repeat: Infinity  }} d="M66 0 30 0V0Q23.043.018 23 6L61 6C64 6 65 9 65 12L65 35C65 37 63 39 61 39L44 39 44 48"  stroke="red" strokeWidth="1" stroke-linecap="round"> 
+
+</motion.path>
+</svg>
+  )
+}                           
