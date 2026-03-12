@@ -1,27 +1,32 @@
-import { Cta4 } from "@/components/CakeComponents/Cta";
-import HeroSection from "@/components/Landing/HeroSection";
-import {RadialGradient} from "@/components/Landing/RadialGradient";
-import Navbar from "@/components/Layout/Navbar";
+"use client"
+import Hero2 from "@/components/CakeComponents/Hero2";
+import Nav from "@/components/CakeComponents/Nav";
+import OccasionSection from "@/components/CakeComponents/OccasionSection";
+import { RadialGradient3 } from "@/components/Landing/RadialGradient";
+import { useEffect } from "react";
+
 
 export default function Home() {
+  useEffect(() => {
+
+    (
+
+      async () => {
+
+        const LocomotiveScroll = (await import('locomotive-scroll')).default
+
+        const locomotiveScroll = new LocomotiveScroll();
+      }
+    )()
+
+  }, [])
   return (
     <>
-    <Cta4/>
-        <RadialGradient />
-      <div className=" relative font-sans ">
-        <Navbar/>
-        <div className="h-screen w-full pt-20 px-[2%]">
-        <HeroSection/>
-
-        </div>
-        <div className="h-screen w-full  px-[20%] mt-20">
-          <div className="h-full w-full rounded-xl bg-blue-400"></div>
-        </div>
-        <div className="h-screen w-full  px-[2%]  mt-20 ">
-          <div className="h-full w-full rounded-xl bg-blue-400"></div>
-        </div>
-      
-      </div>
+      <Nav />
+      <RadialGradient3 />
+      <Hero2 />
+      <OccasionSection/>     
+      <div className="h-screen w-full "></div>
     </>
   );
 }

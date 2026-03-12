@@ -2,6 +2,7 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import React, { ReactHTMLElement } from 'react'
 import {motion} from 'motion/react'
+import { div } from 'motion/react-client'
 
 export const Cta = () => {
   return (
@@ -191,4 +192,10 @@ export const Cta4 = () =>{
 </motion.path>
 </svg>
   )
-}                           
+}   
+
+export const CtaGolden = () => {
+  return (
+    <div>Order you Cake</div>
+  )
+}

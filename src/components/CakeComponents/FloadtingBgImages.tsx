@@ -64,22 +64,25 @@ export default function FloatingBackgroundImages() {
     ];
     // 🧠 12 Fixed Luxury Layout Positions
      const HERO_LAYOUT:HeroLayoutItem[] = [
-        { top: "10%", right: "3%", size: 180, tier: "large" },
-        { top: "41%", right: "24%", size: 180, tier: "large" },
-        { top: "65%", right: "4%", size: 180, tier: "large" },
-        { top: "65%", right: "84%", size: 180, tier: "large" },
-        { top: "3%", right: "84%", size: 180, tier: "large" },
+        { top: "10%", right: "3%", size: 170, tier: "large" },
+        // { top: "41%", right: "24%", size: 180, tier: "large" },
+        { top: "65%", right: "4%", size: 170, tier: "large" },
+        { top: "3%", right: "84%", size: 170, tier: "large" },
+        
+        // { top: "13%", right: "79%", size: 150, tier: "medium" },
+        // { top: "13%", right: "59%", size: 150, tier: "medium" },
+        // { top: "38%", right: "60%", size: 160, tier: "medium" },
+        { top: "65%", right: "84%", size: 170, tier: "medium" },
+        { top: "41%", right: "24%", size: 150, tier: "medium" },
 
-        { top: "13%", right: "79%", size: 150, tier: "medium" },
-        { top: "13%", right: "59%", size: 150, tier: "medium" },
-        { top: "38%", right: "60%", size: 160, tier: "medium" },
         { top: "77%", right: "72%", size: 150, tier: "medium" },
         { top: "52%", right: "76%", size: 140, tier: "medium" },
-        { top: "52%", right: "66%", size: 140, tier: "medium" },
-        { top: "52%", right: "86%", size: 140, tier: "medium" },
+        { top: "38%", right: "66%", size: 140, tier: "medium" },
+        // { top: "52%", right: "86%", size: 140, tier: "medium" },
         { top: "52%", right: "56%", size: 140, tier: "medium" },
 
         { top: "6%", right: "26%", size: 110, tier: "small" },
+        { top: "8%", right: "66%", size: 110, tier: "small" },
         { top: "30%", right: "89%", size: 100, tier: "small" },
         { top: "44%", right: "10%", size: 120, tier: "small" },
         { top: "82%", right: "22%", size: 110, tier: "small" },
@@ -88,9 +91,9 @@ export default function FloatingBackgroundImages() {
     //  You choose which images go where (by index from HERO_IMAGES)
 
  const HERO_IMAGE_TIERS = {
-  large: [16, 13,15,18,17],       // These indexes will be LARGE
-  medium: [12, 4, 6,0,1, 2,3,14],   // These will be MEDIUM
-  small: [3, 5, 2, 10,4] // These will be SMALL
+  large: [7,15,17],       // These indexes will be LARGE
+  medium: [6,13,1, 2,7,14],   // These will be MEDIUM
+  small: [3,17, 5, 2, 8,4] // These will be SMALL
 };
 
     //some images also hardcoded 
@@ -105,9 +108,9 @@ export default function FloatingBackgroundImages() {
   };
 
   // Optional: Shuffle inside each tier
-//   tierImages.large = shuffleArray(tierImages.large);
-//   tierImages.medium = shuffleArray(tierImages.medium);
-//   tierImages.small = shuffleArray(tierImages.small);
+  tierImages.large = shuffleArray(tierImages.large);
+  tierImages.medium = shuffleArray(tierImages.medium);
+  tierImages.small = shuffleArray(tierImages.small);
 
   const tierCounters = {
     large: 0,
@@ -143,7 +146,7 @@ export default function FloatingBackgroundImages() {
 
     if (tier === "small") {
       floatX = (Math.random() - 0.5) * 25;
-      floatY = (Math.random() - 0.5) * 25;
+      floatY = (Math.random() - 0.5) * 25 +10;
       floatDurationX = 5 + Math.random() * 3;
       floatDurationY = 6 + Math.random() * 3;
     }
@@ -386,7 +389,7 @@ export default function FloatingBackgroundImages() {
     //   }, []);
 
     //with game engine logic with spacing b/w images
-    // useEffect(() => {
+    // useEffect(() => {w
     //     const generated: FloatingImage[] = [];
     //     const numberImageGenerated = 10;
 
@@ -620,75 +623,83 @@ export default function FloatingBackgroundImages() {
                 perspective: "1200px"
             }}
         >
-            {images.map((img, i) => (
-                <motion.div
-                    key={img.id}
-                    className="absolute will-change-transform "
-                    style={{
-                        top: img.top,
-                        left: img.left,
-                        width: img.size,
-                        height: img.size,
-                        transformStyle: "preserve-3d"
-                    }}
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{
-                        scale: 1,
-                        opacity: 0.9,
-                        x: [0, img.floatX, 3],
-                        y: [0, img.floatY,],
-                        rotateX: [0, 3, -3, 0],
-                        rotateY: [0, -4, 4, 0],
-                    }}
-                    transition={{
-                        scale: {
-                            duration: img.duration,
-                            ease: img.ease,
-                            delay: i * 0.15,
-                        },
-                        opacity: {
-                            duration: img.duration,
-                            ease: img.ease,
-                            delay: i * 0.15,
+            {images.map((img, i) => {
+                const appearDelay = i * 0.1;
+                const floatDelay = appearDelay + img.duration + 0.3; // wait for appear + small pause
 
-                        },
-                        x: {
-                            duration: 8,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            repeatType: "mirror",
-                            delay: 1.5
-                        },
-                        y: {
-                            duration: 10,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            repeatType: "mirror",
-                            delay: 1.5
-                        },
-                        rotateX: {
-                            duration: img.floatDurationX,
-                            repeat: Infinity,
-                            repeatType: "mirror",
-                            ease: "easeInOut",
-                        },
-                        rotateY: {
-                            duration: img.floatDurationY,
-                            repeat: Infinity,
-                            repeatType: "mirror",
-                            ease: "easeInOut",
-                        },
-                    }}
-                >
-                    <Image
-                        src={img.src}
-                        alt="floating cake"
-                        fill
-                        className="object-contain pointer-events-none select-none "
-                        sizes="300px"
-                    />
-                </motion.div>
-            ))}
+                return (
+                    <motion.div
+                        key={img.id}
+                        className="absolute will-change-transform "
+                        style={{
+                            top: img.top,
+                            left: img.left,
+                            width: img.size,
+                            height: img.size,
+                            transformStyle: "preserve-3d"
+                        }}
+                        initial={{ scale: 0.2, opacity: 0 }}
+                        animate={{
+                            scale: 1,
+                            opacity: 1,
+                            x: [0, img.floatX, 0],
+                            y: [0, img.floatY,0],
+                            rotateX: [0, 3, -3, 0],
+                            rotateY: [0, -4, 4, 0],
+                        }}
+                        transition={{
+                            scale: {
+                                duration: img.duration,
+                                ease: [0.08,0.82,0.17,1],
+                                delay: appearDelay,
+                            },
+                            opacity: {
+                                duration: img.duration,
+                                ease: [0.08,0.82,0.17,1],
+                                delay: appearDelay,
+    
+                            },
+                            x: {
+                                duration: 8,
+                                repeat: Infinity,
+                                ease: [0.65,0.05,0.36,1],
+                                repeatType: "mirror",
+                                delay: floatDelay
+                            },
+                            y: {
+                                duration: 10,
+                                repeat: Infinity,
+                                ease: [0.65,0.05,0.36,1],
+                                repeatType: "mirror",
+                                delay: floatDelay
+                            },
+                            // rotateX: {
+                            //     duration: img.floatDurationX,
+                            //     repeat: Infinity,
+                            //     repeatType: "mirror",
+                            //     ease: [0.65,0.05,0.36,1],
+                            //     delay: floatDelay
+                            // },
+                            // rotateY: {
+                            //     duration: img.floatDurationY,
+                            //     repeat: Infinity,
+                            //     repeatType: "mirror",
+                            //     ease: [0.65,0.05,0.36,1],
+                            //     delay: floatDelay
+                            // },
+                        }}
+                    >
+                        <Image
+                            src={img.src}
+                            alt="floating cake"
+                            fill
+                            className="object-contain pointer-events-none select-none "
+                            sizes="300px"
+                        />
+                    </motion.div>
+                )
+            }
+            )}
         </div>
     );
 }
