@@ -12,9 +12,11 @@ import { Cta3 } from "@/components/CakeComponents/ResponsiveCta";
 import MenuDots from "@/components/CakeComponents/MenuDots";
 import { GlowCards } from "@/components/CakeComponents/GlowCards";
 import Hero2 from "@/components/CakeComponents/Hero2";
-import { CaramelButton, CtaCake } from "@/components/CakeComponents/Cta";
+import { CaramelButton, Cta4, CtaCake, CtaGolden } from "@/components/CakeComponents/Cta";
 import Nav from "@/components/CakeComponents/Nav";
 import { RadialGradient, RadialGradient2 } from "@/components/Landing/RadialGradient";
+import Navbar from "@/components/Layout/Navbar";
+import HeroSection from "@/components/Landing/HeroSection";
 export default function Cake() {
     useEffect(() => {
 
@@ -44,11 +46,11 @@ export default function Cake() {
             {/* <a data-scroll-to data-scroll-to-duration="2.5" href="#yuji" className="rounded-full bg-blue-400 size-10  text-gray-100 fixed  bottom-10 z-100 right-10 cursor-pointer flex justify-center items-center"><MoveUp />
 
             </a> */}
-            
 
-            <Nav/>
-            <Hero2 />
-            
+
+            {/* <Nav />
+            <Hero2 /> */}
+
 
             {/* <Hero /> */}
             {/* <Nav1/> */}
@@ -56,9 +58,10 @@ export default function Cake() {
 
             <div className="h-screen bg-background w-full  flex gap-20 justify-center items-center">
                 <MenuDots />
+                <CtaGolden />
                 <CtaCake />
-                <CaramelButton children="Order Your Dream Cake"/>
-                <div className="flex hidden flex-col justify-center items-center">
+                <CaramelButton children="Order Your Dream Cake" />
+                <div className=" hidden flex-col justify-center items-center">
 
 
                     <Cta3
@@ -108,6 +111,22 @@ export default function Cake() {
                         Cake Page Subheading we are here to make the cake website
                     </h1>
                 </div>
+            </div>
+            <Cta4 />
+            <RadialGradient />
+            <div className=" relative font-sans ">
+                <Navbar />
+                <div className="h-screen w-full pt-20 px-[2%]">
+                    <HeroSection />
+
+                </div>
+                <div className="h-screen w-full  px-[20%] mt-20">
+                    <div className="h-full w-full rounded-xl bg-blue-400"></div>
+                </div>
+                <div className="h-screen w-full  px-[2%]  mt-20 ">
+                    <div className="h-full w-full rounded-xl bg-blue-400"></div>
+                </div>
+
             </div>
             <Section1 />
             <Footer />

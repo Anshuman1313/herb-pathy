@@ -26,3 +26,6 @@ export  function RadialGradient2 () {
   return <StaticRadialGradient scale={1.32} offsetX={0} offsetY={0.2} radius={1.62} focalDistance={1.82} focalAngle={360} falloff={0.24} mixing={0.54} distortionShift={0} distortionFreq={12} grainMixer={0.94} grainOverlay={0} colors={[ '#EBE3D7','#EACBAA']} colorBack="#00000000" className="w-full h-full bg-[#EBE3D7 ] absolute" />;
 }
 
+export  function RadialGradient3() {
+  return <StaticRadialGradient scale={1.32} offsetX={0} offsetY={-0.31} radius={1.64} focalDistance={1} focalAngle={360} falloff={0.24} mixing={0.74} distortionShift={0} distortionFreq={12} grainMixer={0.49} grainOverlay={0} colors={['#EBE3D7', '#EACBAA']} colorBack="#00000000" className="w-full h-[470%] bg-[#EBE3D7 ] absolute" style={{ backgroundColor: '#EBE3D7', }} />;
+}
