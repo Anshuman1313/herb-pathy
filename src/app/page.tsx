@@ -2,6 +2,7 @@
 import Hero2 from "@/components/CakeComponents/Hero2";
 import Nav from "@/components/CakeComponents/Nav";
 import OccasionSection from "@/components/CakeComponents/OccasionSection";
+import UpwardStroke from "@/components/CakeComponents/OccasionSectionSvg/UpwardStroke";
 import { RadialGradient3 } from "@/components/Landing/RadialGradient";
 import { useEffect } from "react";
 
@@ -26,7 +27,6 @@ export default function Home() {
       <RadialGradient3 />
       <Hero2 />
       <OccasionSection/>     
-      <div className="h-screen w-full "></div>
     </>
   );
 }
