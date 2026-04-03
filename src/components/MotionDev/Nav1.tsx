@@ -25,13 +25,13 @@ const Nav1 = () => {
 
     return (
         <div className=' text-heading-cake  relative'>
-            <div className={`bg-background transition-shadow duration-300   z-100 font-milkshake text-5xl flex justify-between px-5 items-center 
+            <div className={`bg-background transition-shadow duration-300   z-100 font-milkshake text-3xl flex justify-between px-5 items-center 
             ${isOpen ? "shadow-none  delay-0" 
                 : "shadow-xl shadow-chart-1  delay-1000 ease-out"} 
             absolute top-16 left-[27%] right-[27%] h-18.75 rounded-xl
             `}
             >
-                <span>DreamSlice</span>
+                <span>DreamSliceStudio</span>
 
                 <div onClick={() => setIsOpen(!isOpen)}> <Hamburger1 /></div>
             </div>
