@@ -35,7 +35,7 @@ return (
           exit={{ opacity: 0 }} className="overlay" />
         <div className="active-game">
           <motion.div layoutId={`inner-${activeGame.title}`} className="inner" ref={ref} style={{ borderRadius: 12 }}>
-            <div className="header">
+            <div className="header ">
               <motion.img
                 layoutId={`img-${activeGame.title}`}
                 height={56}
