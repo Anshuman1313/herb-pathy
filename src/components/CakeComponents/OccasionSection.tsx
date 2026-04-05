@@ -8,7 +8,7 @@ const OccasionSection = () => {
      
     return (
         <>
-            <div className="h-[200%] w-full relative z-10 pt-40 px-20 space-y-20 overflow-hidden ">
+            <div className="h-[200%] w-full  relative z-10 pt-40  px-20 space-y-20 overflow-hidden ">
                 {/* <div className='absolute top-0 left-0 h-230 w-full'>
                 <Image src={"/occasion/2occasion.png"} fill alt='src-image' className='absolute top-0 '/>
                 </div> */}
