@@ -1,0 +1,20 @@
+# Make index.html the default 
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /
+
+# If the request is for a real file or directory, serve it directly
+ RewriteCond %{REQUEST_FILENAME} -f [OR]
+ RewriteCond %{REQUEST_FILENAME} -d
+ RewriteRule ^ - [L]
+
+ # If a matching .html file exists, serve it
+ # Example: /about → about.html
+ # /industries/ecommerce → industries/ecommerce.html
+ RewriteCond %{DOCUMENT_ROOT}/$1.html -f 
+ RewriteRule ^(.+?)/?$ $1.html [L]
+
+ # Fallback: if nothing matches, serve index.html
+ # (useful for client-side routing or 404 handling)
+ RewriteRule ^ index.html [L]
