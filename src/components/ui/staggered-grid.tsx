@@ -115,7 +115,7 @@ export function StaggeredGrid({
                         delay: delayFactor,
                         ease: 'sine.out',
                     })
-                    .from(columnItems.map(item => item.querySelector('.grid__item-img')), {
+                    .from(columnItems.map(item => item.querySelector('.grid__item-img')).filter(Boolean), {
                         transformOrigin: '50% 0%',
                         ease: 'sine.out',
                     }, 0)
@@ -164,15 +164,15 @@ export function StaggeredGrid({
                 '--grid-item-translate': '0px',
             } as React.CSSProperties}
         >
-            <section className="grid place-items-center w-full relative mt-[10vh]">
-                <div ref={textRef} className="text font-alt uppercase flex content-center text-[clamp(3rem,14vw,10rem)] leading-[0.7] ">
+            <section className="grid place-items-center w-full relative ">
+                <div ref={textRef} className="text font-crimson pt-10 text-heading-cake uppercase flex content-center text-[clamp(3rem,14vw,10rem)]  ">
                     {splitText(centerText)}
                 </div>
             </section>
 
-            <section className="grid place-items-center w-full relative">
-                <div ref={gridFullRef} className="grid--full relative w-full my-[10vh] h-auto aspect-[1.1] max-w-none p-4 grid gap-4 grid-cols-7 grid-rows-5">
-                    <div className="grid-overlay absolute inset-0 z-[15] pointer-events-none opacity-0 bg-white/80 dark:bg-black/80 rounded-lg transition-opacity duration-500" />
+            <section className="grid   w-full relative">
+                <div ref={gridFullRef} className="grid-full relative w-full h-auto aspect-[1.0] max-w-none  grid gap-4 grid-cols-7 grid-rows-5   ">
+                    <div className="grid-overlay absolute  inset-0 z-15 pointer-events-none opacity-0 bg-white/80 dark:bg-black/80 rounded-lg transition-opacity duration-500" />
                     {mixedGridItems.map((item, i) => {
                         if (item === 'BENTO_GROUP') {
                             // Render the HoverExpand Group using passed bentoItems
@@ -197,7 +197,7 @@ export function StaggeredGrid({
                                             >
                                                 {/* Border Overlay - Fixes edge artifacts by sitting on top */}
                                                 <div className={cn(
-                                                    "absolute inset-0 rounded-2xl border z-50 pointer-events-none transition-colors duration-700",
+                                                    "absolute inset-0 rounded-2xl border z-0 pointer-events-none transition-colors duration-700",
                                                     isActive
                                                         ? "border-zinc-500/50"
                                                         : "border-zinc-800/50 group-hover:border-zinc-700"
@@ -220,7 +220,7 @@ export function StaggeredGrid({
                                                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 opacity-90 group-hover/img:opacity-100"
                                                                     />
                                                                     {/* Text Protection Gradient - Shadow peaking from bottom */}
-                                                                    <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black via-black/50 to-transparent pointer-events-none" />
+                                                                    <div className="absolute bottom-0 left-0 w-full h-40 bg-linear-to-t from-black via-black/50 to-transparent pointer-events-none" />
                                                                 </>
                                                             )}
                                                         </div>
@@ -261,28 +261,77 @@ export function StaggeredGrid({
                         if (i === 17 || i === 18) return null;
 
                         if (typeof item === 'string') {
-                            const Icon = i % 3 === 0 ? Github : i % 3 === 1 ? Slack : Twitter;
-                            const label = i % 3 === 0 ? "Github" : i % 3 === 1 ? "Slack" : "Twitter";
+                            const Icon = <InstagramIcon/>
+                            const label = "Instagram"
 
                             return (
-                                <figure key={`img-${i}`} className="grid__item m-0 relative z-10 [perspective:800px] will-change-[transform,opacity] group cursor-pointer">
-                                    <div className="grid__item-img w-full h-full [backface-visibility:hidden] will-change-transform rounded-xl overflow-hidden shadow-sm border border-zinc-200 dark:border-zinc-900 bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-transparent">
+//                                 <figure
+//   key={`img-${i}`}
+//   className="grid__item m-0 relative z-10 [perspective:1000px] will-change-[transform,opacity] group cursor-pointer"
+// >
+//   <div className="relative w-full h-full transition-transform duration-700 ease-[cubic-bezier(0.83,0,0.17,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+
+//     {/* FRONT SIDE (Instagram Icon) */}
+//     <div className="absolute inset-0 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-900 bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center backface-hidden">
+
+//       {/* Subtle hover bg */}
+//       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+//       <div className="relative z-10 flex flex-col items-center justify-center gap-3">
+//         <InstagramIcon className="w-8 h-8 text-zinc-400 dark:text-zinc-500 transition-all duration-300 group-hover:text-black dark:group-hover:text-white group-hover:scale-110" />
+
+//         <div className="text-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 delay-75">
+//           <span className="block text-[10px] font-medium text-zinc-500 uppercase tracking-wider mb-0.5">
+//             From Instagram
+//           </span>
+//           <span className="block text-sm font-bold text-zinc-700 dark:text-white tracking-tight">
+//             View Story
+//           </span>
+//         </div>
+//       </div>
+//     </div>
+
+//     {/* BACK SIDE (Image) */}
+//     <div className="absolute inset-0 rounded-xl overflow-hidden [transform:rotateY(180deg)] backface-hidden">
+
+//       <img
+//         src={item}
+//         alt={`testimonial-${i}`}
+//         className="absolute inset-0 w-full h-full object-cover"
+//       />
+
+//       {/* Overlay */}
+//       <div className="absolute inset-0 bg-black/40" />
+
+//       {/* Optional text */}
+//       <div className="absolute bottom-3 left-3 text-white text-xs font-medium tracking-wide">
+//         Real Customer Story
+//       </div>
+//     </div>
+//   </div>
+// </figure>
+                                <figure key={`img-${i}`} className="grid__item m-0 relative  [perspective:800px] will-change-[transform,opacity] group cursor-pointer">
+                                    <a href="https://www.instagram.com/dreamslicestudio/" target='blank'>
+                                    <div className="grid__item-img w-full h-full backface-hidden will-change-transform rounded-xl overflow-hidden shadow-sm border border-zinc-200 dark:border-zinc-900 bg-zinc-100 dark:bg-zinc-950 flex items-center justify-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-transparent">
 
                                         {/* Gradient Overlay for Hover */}
-                                        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-black backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
-
+                                        <div className="z-10 absolute inset-0 bg-linear-to-b from-black/40 via-black/80 to-black backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 " />
+                                        <img src={`/ttss/${i+1}.png`} className='h-full w-full object-cover absolute'/>
+                                            
                                         {/* Content Container */}
                                         <div className="relative z-10 flex flex-col items-center justify-center gap-3">
                                             {/* Icon */}
-                                            <Icon className="w-8 h-8 text-zinc-400 dark:text-zinc-500 transition-all duration-300 group-hover:text-white group-hover:scale-110" />
+                                            <InstagramIcon className="w-8 h-8 text-transparent  dark:text-zinc-500 transition-all duration-300 group-hover:text-white group-hover:scale-110" />
 
                                             {/* Text Reveal */}
                                             <div className="text-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 delay-75">
-                                                <span className="block text-[10px] font-medium text-white/90 uppercase tracking-wider mb-0.5">Build with</span>
+                                                {/* <span className="block text-[10px] font-medium text-white/90 uppercase tracking-wider mb-0.5">Build with</span> */}
                                                 <span className="block text-sm font-bold text-white tracking-tight">{label}</span>
                                             </div>
                                         </div>
+                                        
                                     </div>
+                                    </a>
                                 </figure>
                             )
                         }
@@ -297,3 +346,38 @@ export function StaggeredGrid({
 }
 
 export default StaggeredGrid
+export const InstagramIcon = ({ size = 24, color = "currentColor", ...props }) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect
+        x="2"
+        y="2"
+        width="20"
+        height="20"
+        rx="5"
+        stroke={color}
+        strokeWidth="2"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="5"
+        stroke={color}
+        strokeWidth="2"
+      />
+      <circle
+        cx="17.5"
+        cy="6.5"
+        r="1.5"
+        fill={color}
+      />
+    </svg>
+  );
+};

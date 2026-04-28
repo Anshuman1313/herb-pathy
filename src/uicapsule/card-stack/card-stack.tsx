@@ -80,8 +80,10 @@ export const CardStack = ({ cards }: CardStackProps) => {
           each: staggerEach,
           repeat: -1,
           repeatDelay: repeatDelay,
-          onRepeat(this) {
-            this.targets()[0].style.transform = "translateY(100vh)";
+          onRepeat(this: gsap.core.Tween) {
+            this.targets().forEach((el) => {
+              (el as HTMLElement).style.transform = "translateY(100vh)";
+            });
           },
         },
       },
@@ -102,8 +104,10 @@ export const CardStack = ({ cards }: CardStackProps) => {
           each: staggerEach,
           repeat: -1,
           repeatDelay: repeatDelay,
-          onRepeat() {
-            this.targets()[0].style.transform = "translateY(0vh)";
+         onRepeat(this: gsap.core.Tween) {
+            this.targets().forEach((el) => {
+              (el as HTMLElement).style.transform = "translateY(100vh)";
+            });
           },
         },
       },
@@ -142,19 +146,19 @@ export const CardStack = ({ cards }: CardStackProps) => {
   return (
     <section className="effect h-screen overflow-hidden bg-white text-[#f1f1f1] [perspective:150vw]">
       <div className="root h-full [transform-style:preserve-3d]" ref={rootRef}>
-        {cards.map((card,i) => (
+        {cards.map((card, i) => (
           <a
             key={card.src}
             className="slide absolute z-1000 top-[calc(50%-5vw)] left-[calc(50%-20vw)] block [aspect-ratio:1.75] w-[40vw]"
             href={card.href}
             target="_blank"
-            style={ i == 0 ? {
+            style={i == 0 ? {
               position: "relative"
             }
-            : {
-              position: "absolute"
-            }
-                
+              : {
+                position: "absolute"
+              }
+
             }
           >
             <img className="content h-full w-full rounded-[12px] object-cover" src={card.src} />
