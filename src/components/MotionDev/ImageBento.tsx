@@ -91,7 +91,7 @@ const cards: GridItem[] = [
       "Beautiful multi-tier wedding cakes designed to make your big day unforgettable.",
     longDescription:
       "Our wedding cakes are crafted with precision and elegance, designed to be the centerpiece of your celebration. From classic floral tiers to modern minimalist styles, each cake is customized to match your theme, taste, and story. We focus on premium ingredients, delicate detailing, and a flawless finish that looks stunning and tastes even better.",
-    image: "/occasion/wd1.jpg",
+    image: "/Gallery/b1.jpeg",
     colSpan: 1,
     rowSpan: 1,
   },
