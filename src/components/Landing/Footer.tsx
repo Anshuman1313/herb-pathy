@@ -1,17 +1,19 @@
 import Link from "next/link";
 import React from "react";
+import Fssailogo from "../fssailogo";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-gray-100  text-[#3E2C23] border-t">
+    <footer className="w-full bg-[#E6DCA2]  text-[#694125] ">
 
       <div className="max-w-7xl  mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* BRAND + SOCIAL */}
-        <div className="flex  gap-4">
-          <h2 className="text-4xl font-crimson italic">
-            DreamSliceStudio 
-          </h2>
+        <div className="flex   -translate-x-3">
+              <Link href="/" className="flex items-center   w-80 h-20">
+      <img src={"/Group91.svg"} className="size-full"/>
+        
+      </Link>
 
         </div>
 
@@ -37,11 +39,22 @@ const Footer = () => {
           <p>Vista Tower Sector 75, Mohali</p>
           <p>Call: 6284219963</p>
 
-          <div className="mt-2">
+          <div className="mt-2  flex flex-col gap-2">
+            <div>
             <p className="font-medium">Locations</p>
-            <p className="text-xs text-gray-600">
+            <p className="text-xs ">
               Chandigarh | Mohali 
             </p>
+
+            </div>
+            <div className="">
+            <p className="font-medium  w-12"><Fssailogo/></p>
+            <p className="text-xs mt-1">
+              License No | 22126676000886 
+            </p>
+
+            </div>
+            
           </div>
         </div>
 
