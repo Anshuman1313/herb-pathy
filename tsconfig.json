@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "src/components/MotionDev/Practice.jsx", "src/components/MotionDev/Practice3.jsx", "src/components/MotionDev/Practice4.jsx"  ],
   "exclude": ["node_modules"]
 }

@@ -17,29 +17,120 @@ import Nav from "@/components/CakeComponents/Nav";
 import { RadialGradient, RadialGradient2 } from "@/components/Landing/RadialGradient";
 import Navbar from "@/components/Layout/Navbar";
 import HeroSection from "@/components/Landing/HeroSection";
+import PhotoGallery from "@/components/MotionDev/PhotoGallery";
+import PhotoGallery2 from "@/components/MotionDev/PhotoGallery2";
+import BentoLayout from "@/components/MotionDev/BentoLayout";
+import SharedLayout from "@/components/MotionDev/SharedLayout";
+import ImageBento from "@/components/MotionDev/ImageBento";
+import BoxeLayout from "@/components/MotionDev/BoxeLayout";
+import RevealText from "@/components/ClipPathText";
+import Preview from "@/components/Landing/InfiniteGrid";
+import Osmos from "@/components/MotionDev/Osmos";
+import OsmosImage from "@/components/MotionDev/OsmosImage";
+import RadialMarqueeDebugger from "@/components/MotionDev/RadialMarqueeDebugger";
+import HorizontalImagesStack from "@/components/MotionDev/HorizontalImagesStack";
+import Practice9 from "@/components/Practice9";
+import LogoLoader from "@/components/LogoLoader";
+import EyesLogo from "@/components/EyesLogo";
+
 export default function Cake() {
-    useEffect(() => {
+    // useEffect(() => {
 
-        (
+    //     (
 
-            async () => {
+    //         async () => {
 
-                const LocomotiveScroll = (await import('locomotive-scroll')).default
+    //             const LocomotiveScroll = (await import('locomotive-scroll')).default
 
-                const locomotiveScroll = new LocomotiveScroll();
+    //             const locomotiveScroll = new LocomotiveScroll();
 
 
-            }
+    //         }
 
-        )()
+    //     )()
 
-    }, [])
-    const ConstraintRef1 = useRef(null)
-    const cakeImages = ["cake.png", "cupcake2.png", "mail-server.png", "8.png", "18.png"]
+    // }, [])
+    // const ConstraintRef1 = useRef(null)
+    // const cakeImages = ["cake.png", "cupcake2.png", "mail-server.png", "8.png", "18.png"]
 
     return (
         <>
-            <div id="yuji relative"></div>
+        <div className="h-screen w-full grid place-items-center">
+            <EyesLogo/>
+        </div>
+        {/* <Practice9/> */}
+        {/* <div>Cake</div> */}
+       {/* <HorizontalImagesStack/> */}
+            
+        {/* <OsmosImage/>
+            
+      <div className="h-screen w-full bg-gray-100"></div>
+            <RadialMarqueeDebugger/> */}
+        {/* <Osmos/> */}
+        {/* <Preview/> */}
+            {/* <div id="yuji relative"></div> */}
+            {/* <div className="h-screen w-full grid place-items-center">
+                    <RevealText
+                                text="Fresh Cakes"
+                                textClassName="block"
+                                overlayClassName="bg-[#8B4513]"
+                                duration={1.5}
+                                wrapperClassName="pr-3 "
+                              />
+            </div> */}
+            {/* <div className="relative inline-block"
+            >
+                <RevealText text="hi heelo" duration={1} key={2} />
+                <motion.span
+                    className="block whitespace-nowrap relative  text-black"
+                    initial={{
+                        clipPath: "inset(0% 100% 0% 0%)",
+                    }}
+                    animate={{
+                        clipPath: "inset(0% 0% 0% 0%)",
+                    }}
+                    transition={{
+                        duration: 0.8,
+                        ease: "easeInOut",
+                    }}
+                >
+                    Your Frontend team.
+                </motion.span>
+
+                <motion.div
+                    className="absolute inset-0 bg-red-400"
+                    initial={{ x: "-100%", scaleX: 1 }}
+                    animate={{
+                        x: ["-100%", "0%","0%"],
+                        scaleX: [ 1,1, 0],
+                    }}
+                    style={{ originX: 1 }}
+                    transition={{
+                        duration: 1,
+                        ease: "easeInOut",
+                      
+                    }}
+                />
+            </div> */}
+            {/* <div className="h-screen  relative w-full grid place-items-center">
+                <BoxeLayout />
+            </div> */}
+            {/* <div className="h-screen relative w-full grid place-items-center">
+                <ImageBento />
+            </div> */}
+            {/* <div className="h-screen relative w-full grid place-items-center">
+                <SharedLayout/>
+            </div> */}
+            {/* <div className="h-screen w-full"></div> */}
+            {/* <div className="h-screen w-full grid place-items-center relative ">
+                <BentoLayout/>
+            </div> */}
+            {/* <div className="h-screen w-full flex items-center justify-center overflow-hidden">
+               
+                    <PhotoGallery2 />
+               
+            </div> */}
+            {/* <PhotoGallery/> */}
             {/* <RadialGradient/> */}
             {/* <RadialGradient2/> */}
             {/* There is move up button */}
@@ -56,7 +147,7 @@ export default function Cake() {
             {/* <Nav1/> */}
 
 
-            <div className="h-screen bg-background w-full  flex gap-20 justify-center items-center">
+            {/* <div className="h-screen bg-background w-full  flex gap-20 justify-center items-center">
                 <MenuDots />
                 <CtaGolden />
                 <CtaCake />
@@ -92,8 +183,8 @@ export default function Cake() {
                 <div className="bg-foreground">
 
                 </div>
-            </div>
-            <div className="h-screen w-full p-5">
+            </div> */}
+            {/* <div className="h-screen w-full p-5">
                 <div className="h-full w-full bg-background rounded-xl flex flex-col justify-center items-center">
                     <div className="flex gap-5">
                         {cakeImages.map((url, i) => (
@@ -146,13 +237,13 @@ export default function Cake() {
                 <h1 className="font-geist font-normal text-[18px] text-[#292524] ">
                     Cake Page Subheading we are here to make the cake website
                 </h1>
-            </div>
+            </div> */}
 
 
 
 
             {/* There is this images array */}
-            <div className="w-full min-h-screen   bg-gray-100 p-5 flex flex-col gap-5 items-center   relative">
+            {/* <div className="w-full min-h-screen   bg-gray-100 p-5 flex flex-col gap-5 items-center   relative">
 
                 {Array.from({ length: 22 }).map((_, i) => (
 
@@ -166,9 +257,9 @@ export default function Cake() {
                 ))}
 
 
-            </div>
+            </div> */}
             {/* Gojo Sukuna anchor tags  */}
-            <div className="w-full min-h-screen overflow-y-hidden  bg-gray-100 p-5">
+            {/* <div className="w-full min-h-screen overflow-y-hidden  bg-gray-100 p-5">
                 <a href="#gojo" data-scroll-to  >Gojo</a>
                 <a href="#sukuna" data-scroll-to data-scroll-to-duration="3" >Sukuna</a>
                 <div className="flex flex-col gap-20 justify-center">
@@ -186,8 +277,8 @@ export default function Cake() {
 
                 </div>
                 <MovingPhotoShowcase />
-            </div>
-            <motion.div
+            </div> */}
+            {/* <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 animate={{ x: 400 }}
@@ -204,7 +295,7 @@ export default function Cake() {
             </div>
             <div className="h-[200vh] w-full bg-gray-100 " data-scroll-container>
                 <h1 id="sukuna" className="text-center" data-scroll-section>Sukuna King</h1>
-            </div>
+            </div> */}
         </>
     )
 }
