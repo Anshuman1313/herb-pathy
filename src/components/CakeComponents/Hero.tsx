@@ -28,7 +28,7 @@ const Hero = () => {
                         <div className='h-full    flex-col justify-start flex px-6 pt-30   w-full'>
                             <div className='flex flex-col '>
                                 <h1 className='  font-bold w-[60%]  text-8xl font-cooper text-background'>Baked with<br /> Love, Crafted<br /> for Dreams</h1>
-                                <div className='font-medium text-background font-cooper  flex flex-col justify-end text-4xl'>
+                                <div className='font-medium  text-background font-cooper  flex flex-col justify-end text-4xl'>
                                     <span>Every slice made </span>
                                     <span>fresh to turn  </span>
                                     <span>your sweetest moments </span>

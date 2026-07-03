@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 type FloatingImage = {
@@ -64,27 +64,27 @@ export default function FloatingBackgroundImages() {
     ];
     // 🧠 12 Fixed Luxury Layout Positions
      const HERO_LAYOUT:HeroLayoutItem[] = [
-        { top: "10%", right: "3%", size: 170, tier: "large" },
+        { top: "10%", right: "3%", size: 150, tier: "large" },
         // { top: "41%", right: "24%", size: 180, tier: "large" },
-        { top: "65%", right: "4%", size: 170, tier: "large" },
-        { top: "3%", right: "84%", size: 170, tier: "large" },
+        { top: "65%", right: "4%", size: 150, tier: "large" },
+        { top: "3%", right: "84%", size: 150, tier: "large" },
         
         // { top: "13%", right: "79%", size: 150, tier: "medium" },
         // { top: "13%", right: "59%", size: 150, tier: "medium" },
         // { top: "38%", right: "60%", size: 160, tier: "medium" },
-        { top: "65%", right: "84%", size: 170, tier: "medium" },
-        { top: "41%", right: "24%", size: 150, tier: "medium" },
+        { top: "65%", right: "84%", size: 160, tier: "medium" },
+        { top: "41%", right: "24%", size: 130, tier: "medium" },
 
-        { top: "77%", right: "72%", size: 150, tier: "medium" },
-        { top: "52%", right: "76%", size: 140, tier: "medium" },
-        { top: "38%", right: "66%", size: 140, tier: "medium" },
+        { top: "77%", right: "72%", size: 130, tier: "medium" },
+        { top: "52%", right: "76%", size: 120, tier: "medium" },
+        { top: "38%", right: "66%", size: 120, tier: "medium" },
         // { top: "52%", right: "86%", size: 140, tier: "medium" },
-        { top: "52%", right: "56%", size: 140, tier: "medium" },
+        { top: "52%", right: "56%", size: 120, tier: "medium" },
 
-        { top: "6%", right: "26%", size: 110, tier: "small" },
-        { top: "8%", right: "66%", size: 110, tier: "small" },
+        { top: "6%", right: "26%", size: 100, tier: "small" },
+        { top: "8%", right: "66%", size: 100, tier: "small" },
         { top: "30%", right: "89%", size: 100, tier: "small" },
-        { top: "44%", right: "10%", size: 120, tier: "small" },
+        { top: "44%", right: "10%", size: 110, tier: "small" },
         { top: "82%", right: "22%", size: 110, tier: "small" },
         { top: "65%", right: "20%", size: 100, tier: "small" },
     ];

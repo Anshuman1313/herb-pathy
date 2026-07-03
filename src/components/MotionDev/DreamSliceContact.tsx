@@ -175,7 +175,7 @@ export default function DreamSliceContact() {
   return (
     <div
       className="min-h-screen font-serif overflow-x-hidden"
-      style={{ background: "linear-gradient(160deg,#fdf6f0 0%,#fde8e8 50%,#fdf0f5 100%)" }}
+      // style={{ background: "linear-gradient(160deg,#fdf6f0 0%,#fde8e8 50%,#fdf0f5 100%)" }}
     >
       {/* ── navbar placeholder ── */}
       <div className="h-20 border-b border-[#f0d8d8]/60" />
