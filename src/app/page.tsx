@@ -1,9 +1,19 @@
 "use client"
+
 import Hero2 from "@/components/CakeComponents/Hero2";
-import Nav from "@/components/CakeComponents/Nav";
-import OccasionSection from "@/components/CakeComponents/OccasionSection";
-import UpwardStroke from "@/components/CakeComponents/OccasionSectionSvg/UpwardStroke";
-import { RadialGradient3 } from "@/components/Landing/RadialGradient";
+
+import Nav1Cake from "@/components/Landing/1Nav";
+import { BakeryCarousel } from "@/components/Landing/BakeryCarasaul";
+
+import Footer from "@/components/Landing/Footer";
+
+import HorizontalScrollBasic from "@/components/Landing/HorizontalScroll";
+
+import SliceSection from "@/components/Landing/SliceSection";
+import StickyGrid from "@/components/Landing/StickyGrid";
+import TestimonialsGrid from "@/components/Landing/TestimonialGrid";
+import LogoLoader from "@/components/LogoLoader";
+
 import { useEffect } from "react";
 
 
@@ -23,10 +33,19 @@ export default function Home() {
   }, [])
   return (
     <>
-      <Nav />
-      <RadialGradient3 />
+    <LogoLoader/>
+      <Nav1Cake/>
       <Hero2 />
-      <OccasionSection/>     
+      <StickyGrid/>
+      <div className="h-fit w-full grid place-items-center">
+</div>
+           <BakeryCarousel/>
+      <SliceSection/>
+      <HorizontalScrollBasic/>
+      <TestimonialsGrid/>
+
+      <Footer/>
+
     </>
   );
 }
