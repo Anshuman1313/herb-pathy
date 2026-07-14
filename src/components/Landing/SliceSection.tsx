@@ -78,7 +78,7 @@ export default function SliceSection() {
                 {/* CENTER IMAGE */}
                 <div className="flex justify-center select-none items-center absolute top-[52%] left-1/2 -translate-x-1/3 -translate-y-1/2 z-0">
                     <motion.img
-                        src="/pastry.png" // 👈 your generated image path
+                        src="/pastry.avif" 
                         alt="Desserts"
                         initial={{ scale: 0.85, opacity: 0 }}
                         whileInView={{ scale: 1, opacity: 1 }}
