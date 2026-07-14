@@ -10,14 +10,14 @@ const slides = [
     heading: "Indulgence, Layered to Perfection",
     sub: "Rich chocolate, delicate cream, and bold cherry notes.",
     meta: "Hand-layered • Small batch",
-    images: ["/2.png", "/3.png"],
+    images: ["/2.avif", "/3.avif"],
   },
   {
     id: 2,
     heading: "Light, Elegant, Effortless",
     sub: "Silky textures with a clean, refined finish.",
     meta: "Balanced • Minimal • Refined",
-    images: ["/4.png", "/5.png"],
+    images: ["/4.avif", "/5.avif"],
   },
 ]
 
