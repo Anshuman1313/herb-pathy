@@ -636,84 +636,84 @@ export default function DreamSliceMenuSection() {
 const DryCakes  = [
   {
     title: "Banana Walnut Cake",
-    img: "DryCake/Banana Walnut Cake",
+    img: "DryCake/Banana Walnut Cake_converted",
   },
   {
     title: "Fruit & Nut Dry Cake",
-    img: "DryCake/Fruit & Nut Dry Cake",
+    img: "DryCake/Fruit & Nut Dry Cake_converted",
   },
   {
     title: "Chocolate Chip Dry Cake",
-    img: "DryCake/Chocolate Chip Dry Cake",
+    img: "DryCake/Chocolate Chip Dry Cake_converted",
   },
   {
     title: "Tea Time Butter Cake",
-    img: "DryCake/Tea Time Butter Cake",
+    img: "DryCake/Tea Time Butter Cake_converted",
   },
   {
     title: "Marble Cake",
-    img: "DryCake/Marble Cake",
+    img: "DryCake/Marble Cake_converted",
   },
  
   {
     title: "Plum Cake",
-    img: "DryCake/Plum Cake",
+    img: "DryCake/Plum Cake_converted",
   },
 
 ];
 const Cheesecakes = [
   {
     title: "Classic New York Cheesecake",
-    img: "CheeseCake/ClassicNewYorkCheesecake",
+    img: "CheeseCake/ClassicNewYorkCheesecake_converted",
   },
   {
     title: "Blueberry Cheesecake",
-    img: "CheeseCake/BlueberryCheesecake",
+    img: "CheeseCake/BlueberryCheesecake_converted",
   },
   {
     title: "Strawberry Cheesecake",
-    img: "CheeseCake/StrawberryCheesecake",
+    img: "CheeseCake/StrawberryCheesecake_converted",
   },
   {
     title: "Chocolate Cheesecake",
-    img: "CheeseCake/ChocolateCheesecake",
+    img: "CheeseCake/ChocolateCheesecake_converted",
   },
   {
     title: "Lotus Biscoff Cheesecake",
-    img: "CheeseCake/LotusBiscoffCheesecake",
+    img: "CheeseCake/LotusBiscoffCheesecake_converted",
   },
   {
     title: "Mango Cheesecake (Seasonal)",
-    img: "CheeseCake/MangoCheesecake",
+    img: "CheeseCake/MangoCheesecake_converted",
   },
   {
     title: "Burnt Basque Cheesecake",
-    img: "CheeseCake/BurntBasqueCheesecake",
+    img: "CheeseCake/BurntBasqueCheesecake_converted",
   },
 ];
 const BentoCake = [
   {
     title: "Mini Chocolate Bento",
-    img: "BentoCake/MiniChocolateBento",
+    img: "BentoCake/MiniChocolateBento_converted",
   },
   {
     title: "Vanilla Celebration Bento",
-    img: "BentoCake/VanillaCelebrationBento",
+    img: "BentoCake/VanillaCelebrationBento_converted",
   },
   {
     title: "Red Velvet Bento",
-    img: "BentoCake/RedVelvetBento",
+    img: "BentoCake/RedVelvetBento_converted",
   },
   {
     title: "Custom Message Bento",
-    img: "BentoCake/CustomMessageBento",
+    img: "BentoCake/CustomMessageBento_converted",
   },
   {
     title: "Birthday Theme Bento",
-    img: "BentoCake/BirthdayThemeBento",
+    img: "BentoCake/BirthdayThemeBento_converted",
   },
   {
     title: "Anniversary Special Bento",
-    img: "BentoCake/AnniversarySpecialBento",
+    img: "BentoCake/AnniversarySpecialBento_converted",
   },
 ];

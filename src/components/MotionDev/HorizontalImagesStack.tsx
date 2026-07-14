@@ -82,7 +82,7 @@ const totalWidth = COLLAPSED_WIDTH * Items.length + (EXPANDED_WIDTH - COLLAPSED_
 
                 <div className='h-full w-full  pl-18'>
                    <div className={`size-full ${colorred[i]}`}> 
-                  <img src={`/menu-cakes/${card.img}.png`} className='size-full object-cover' alt={card.title} />
+                  <img src={`/menu-cakes/${card.img}.avif`} className='size-full object-cover' alt={card.title} />
                   </div>
                   
                   </div>
