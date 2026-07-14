@@ -62,7 +62,7 @@ const items = [
     badge: "01",
      heading: "Lotus Biscoff Delight",
   subheading: "Creamy Lotus Biscoff dessert layered with caramelized biscuit flavor and a velvety smooth finish.",
-    image: "/newtheme/timisu.jpg",
+    image: "/newtheme/timisu.avif",
   },
   {
     id: 2,
