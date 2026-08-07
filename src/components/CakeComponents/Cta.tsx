@@ -115,7 +115,7 @@ export const CaramelButton: React.FC<CaramelButtonProps> = ({
     <button
       className={`
         relative
-        px-12 py-5
+        px-12 py-5 max-md:px-2 max-md:py-2 max-md:text-sm
         rounded-full
         text-white
         font-medium

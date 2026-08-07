@@ -37,7 +37,7 @@ const Footer = () => {
           <h3 className="font-semibold mb-2">Visit Us</h3>
           <p>Sector 23, Chandigarh</p>
           <p>Vista Tower Sector 75, Mohali</p>
-          <p>Call: 6284219963</p>
+          <p>Call: +91 6284219963</p>
 
           <div className="mt-2  flex flex-col gap-2">
             <div>

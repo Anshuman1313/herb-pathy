@@ -2,9 +2,6 @@
 import  { useRef, useState } from 'react'
 import {motion} from "motion/react"
 import clsx from 'clsx'
-import useMeasure from 'react-use-measure'
-import { animate } from 'motion'
-import StatusIcon from './StatusIcon'
   
 type ITEMS = {
     title: string,

@@ -377,7 +377,7 @@ export default function DreamSliceContact() {
 
             {/* WhatsApp button */}
             <motion.a
-              href="https://www.instagram.com/dreamslicestudio/"
+              href="https://wa.me/916284219963"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ y: -2, boxShadow: "0 6px 24px rgba(176,80,80,0.12)" }}

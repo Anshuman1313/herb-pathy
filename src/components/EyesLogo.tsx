@@ -3,7 +3,6 @@ import { motion } from 'motion/react';
 
 const EyesLogo = () => {
     return (
-        <div className='h-20 w-80'>
 
             <svg
                 className='h-full w-full'
@@ -88,7 +87,6 @@ const EyesLogo = () => {
 
             </svg>
 
-        </div>
     )
 }
 

@@ -27,17 +27,12 @@ const Nav1Cake = () => {
   },[])
 
   return (
-    <motion.div className="fixed top-0 left-0 w-full shadow-sm bg-[#E6DCA2]  z-50 overflow-hidden   px-6 md:px-10 flex items-center justify-between h-16 md:h-20 font-crimson">
+    <motion.nav className="fixed top-0 w-full left-0  shadow-sm bg-[#E6DCA2] z-50 overflow-hidden   px-6 md:px-10 flex items-center justify-between  h-16 md:h-20 font-crimson">
 
-      {/* Logo */}
-      <Link href="/" className="flex items-center gap-2  w-80 h-20">
+      <Link href="/" className="flex items-center gap-2 h-20 w-80 max-md:h-full max-md:w-50  ">
       <EyesLogo/>
-        {/* <img src={"/Group91.svg"} className="size-full" /> */}
-        {/* <LiquidMetal className="-translate-x-20" speed={0.01} softness={0.1} repetition={6.32} shiftRed={0.3} shiftBlue={0.3} distortion={0.07} contour={0.4} scale={0.6} rotation={0} shape="diamond" angle={70} frame={105316.37600001237} image="https://app.paper.design/file-assets/01K7HFC2X2KSYFERND2XAH1XZC/01KT1G7AY6TNM25J2ESHHY76PQ.svg" colorBack="#00000000" colorTint="#FFCD16" style={{ backgroundColor: '#FFFFFF', height: '100%', width: '100%' }} /> */}
-
       </Link>
 
-      {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-14 italic text-[#694125]">
         {navLinks.map((link, i) => (
           <HoverLink
@@ -79,7 +74,7 @@ const Nav1Cake = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </motion.nav>
   );
 };
 
@@ -91,7 +86,7 @@ interface HamburgerProps {
 }
 const Hamburger = ({ isOpen, toggle }: HamburgerProps) => (
   <button
-    className="md:hidden absolute right-5 z-50 flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+    className="md:hidden    z-50 flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
     onClick={toggle}
     aria-label="Toggle menu"
   >
