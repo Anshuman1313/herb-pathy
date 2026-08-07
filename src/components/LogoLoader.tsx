@@ -57,7 +57,7 @@ const LogoLoader = () => {
         className='h-screen relative w-full bg-[#E6DCA2] place-items-center grid '
         >
           <svg
-            className=' '
+          className='max-md:h-16 max-md:w-70'
             ref={scope} width="708" height="162" viewBox="0 0 695 162" fill="none" xmlns="http://www.w3.org/2000/svg" >
 
             <motion.g
