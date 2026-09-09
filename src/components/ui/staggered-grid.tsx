@@ -49,7 +49,7 @@ export function StaggeredGrid({
 
     const splitText = (text: string) => {
         return text.split('').map((char, i) => (
-            <span key={i} className="char inline-block" style={{ willChange: 'transform' }}>{char === ' ' ? '\u00A0' : char}</span>
+            <span key={i} className="char inline-block text-brand-burgundy" style={{ willChange: 'transform' }}>{char === ' ' ? '\u00A0' : char}</span>
         ))
     }
 
