@@ -92,17 +92,17 @@ const OccasionSection = () => {
 
         {/* Main Section */}
         <div className="h-[200%] w-full relative z-10 pt-40 px-20 space-y-20 overflow-hidden">
-          <SpinIcon className="absolute top-10 fill fill-heading-cake size-40" />
-          <FondentBrush className="absolute top-99 right-50" />
-          <FlourStroke className="absolute top-90 left-10" />
-          <TopLeftStroke className="absolute top-0 -left-5" />
-          <TopRightStroke className="absolute top-35 h-50 rotate-10 -right-10" />
-          <SpinStarIcon className="absolute top-10 fill-heading-cake right-20 fill size-30" />
+          <SpinIcon className="absolute top-10 fill fill-heading-cake size-40 max-md:hidden" />
+          <FondentBrush className="absolute top-99 right-50 max-md:hidden" />
+          <FlourStroke className="absolute top-90 left-10 " />
+          <TopLeftStroke className="absolute top-0 -left-5 " />
+          <TopRightStroke className="absolute top-35 h-50 rotate-10 -right-10 max-md:hidden " />
+          <SpinStarIcon className="absolute top-10 fill-heading-cake right-20 fill size-30 max-md:hidden" />
 
           {/* Heading */}
           <div className="heading flex flex-col items-center gap-10 z-10 relative">
             <div className="banner">
-              <span className="text-2xl text-center font-mono tracking-tighter space-x-1 font-medium bg-blue-200 px-2 py-1">
+              <span className="text-2xl max-md:flex max-md:text-xl text-center font-mono tracking-tighter space-x-1 font-medium bg-blue-200 px-2 py-1">
                 <span>FOR</span> <span>EVERY</span> <span>OCCASION</span>
               </span>
             </div>

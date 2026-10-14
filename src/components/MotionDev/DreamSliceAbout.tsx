@@ -42,7 +42,7 @@ const HeartOutlineIcon = () => (
 );
 
 const QuoteLeft = () => (
-  <svg viewBox="0 0 32 32" fill="currentColor" className="w-7 h-7 opacity-40">
+  <svg viewBox="0 0 32 32" fill="currentColor" className="w-7 h-7 opacity-40 fill-brand-gold">
     <path d="M0 16C0 7.163 7.163 0 16 0v6C10.477 6 6 10.477 6 16v2h6v14H0V16zm18 0C18 7.163 25.163 0 34 0v6c-5.523 0-10 4.477-10 10v2h6v14H18V16z" />
   </svg>
 );
@@ -123,22 +123,20 @@ export default function DreamSliceAbout() {
 
   return (
     <div
-      className="min-h-screen font-serif overflow-x-hidden"
+      className="min-h-screen font-serif overflow-x-hidden pt-25"
       // style={{
       //   background: "linear-gradient(160deg,#fdf6f0 0%,#fde8e8 50%,#fdf0f5 100%)",
       // }}
     >
-      {/* ── navbar placeholder ── */}
-      <div className="h-20 border-b border-[#f0d8d8]/60" />
 
       {/* ── hero headline ────────────────────────────────────────────── */}
-      <section className="pt-10 sm:pt-10 pb-6 text-center px-4 sm:px-6">
+      <section className="pt-10 sm:pt-10  pb-6 text-center px-4 sm:px-6">
         {/* label */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-[10px] sm:text-lg tracking-[0.35em] text-heading-cake mb-4 font-sans font-medium"
+          className="text-[10px] sm:text-lg tracking-[0.35em] text-brand-gold mb-4 font-sans font-medium"
         >
           + &nbsp; ABOUT US &nbsp; +
         </motion.p>
@@ -148,17 +146,16 @@ export default function DreamSliceAbout() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: EASE, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl text-heading-cake leading-[1.15] tracking-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl text-brand-burgundy leading-[1.15] tracking-tight"
           style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
         >
           More than cakes,
           <br />
           we create{" "}
           <span
-            className="italic"
+            className="italic text-brand-gold"
             style={{
               fontFamily: "'Brush Script MT', cursive, serif",
-              color: "#b85c5c",
             }}
           >
             memories.
@@ -183,14 +180,14 @@ export default function DreamSliceAbout() {
       </section>
 
       {/* ── body paragraphs ──────────────────────────────────────────── */}
-      <section className="max-w-3xl mx-auto px-5 sm:px-8 pb-12 text-center space-y-6">
+      <section className="max-w-3xl mx-auto px-5 sm:px-8 pb-12 text-center space-y-6 text-brand-brown/80">
         {[
           "Founded in 2023, DreamSlice Studio is a boutique home-based bakery built on a passion for refined aesthetics, thoughtful design, and exceptional taste. What began as a simple vision has grown into a creative studio dedicated to turning desserts into experiences.",
           "We specialize in bespoke cakes and premium desserts, designed to complement your most meaningful moments. From elegant wedding cakes to refined celebrations, every piece balances visual artistry with rich, indulgent flavor.",
         ].map((para, i) => (
           <InViewSection key={i}>
             <p
-              className="text-sm sm:text-[15px] text-[#9a6a6a] leading-[1.9] font-sans"
+              className="text-sm sm:text-[15px]  leading-[1.9] font-sans"
             >
               {para}
             </p>
@@ -199,15 +196,14 @@ export default function DreamSliceAbout() {
 
         {/* last paragraph with italic highlight */}
         <InViewSection>
-          <p className="text-sm sm:text-[15px] text-[#9a6a6a] leading-[1.9] font-sans">
+          <p className="text-sm sm:text-[15px]  leading-[1.9] font-sans">
             At DreamSlice Studio, every detail matters. Each creation is crafted with
             high-quality ingredients and a commitment to elegance, ensuring your dessert
             is not just served —{" "}
             <span
-              className="italic"
+              className="italic text-brand-gold"
               style={{
                 fontFamily: "'Brush Script MT', cursive, serif",
-                color: "#b85c5c",
                 fontSize: "1.1em",
               }}
             >
@@ -219,12 +215,12 @@ export default function DreamSliceAbout() {
 
       {/* ── pillars grid ─────────────────────────────────────────────── */}
       <section
-        className="border-t border-[#f0d8d8]"
+        className="border-t border-brand-brown/30"
         style={{ background: "rgba(255,255,255,0.25)" }}
       >
         <div
           ref={pillarsRef}
-          className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#f0d8d8]"
+          className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-brand-brown/30"
         >
           {pillars.map((p, i) => (
             <motion.div
@@ -237,25 +233,23 @@ export default function DreamSliceAbout() {
             >
               {/* icon bubble */}
               <div
-                className="text-heading-cake mb-2"
-                style={{ color: "#b85c5c" }}
+                className=" mb-2 text-brand-gold"
               >
                 {p.icon}
               </div>
 
               {/* label */}
               <p
-                className="text-[10px] sm:text-[11px] tracking-[0.25em] font-sans font-semibold text-heading-cake"
-                style={{ color: "#b85c5c" }}
+                className="text-[10px] sm:text-[11px]  tracking-[0.25em] font-sans font-semibold text-brand-gold"
               >
                 {p.label}
               </p>
 
               {/* heart pip */}
-              <span className="text-[#c97a7a] text-xs leading-none">♥</span>
+              <span className="text-brand-burgundy text-xs leading-none">♥</span>
 
               {/* description */}
-              <p className="text-[12.5px] sm:text-sm text-[#9a6a6a] font-sans leading-relaxed">
+              <p className="text-[12.5px] sm:text-sm text-brand-brown/80 font-sans leading-relaxed">
                 {p.desc}
               </p>
             </motion.div>
@@ -269,20 +263,19 @@ export default function DreamSliceAbout() {
         // style={{ background: "rgba(253,240,240,0.5)" }}
       >
         <InViewSection className="flex items-center justify-center gap-3 sm:gap-5 flex-wrap">
-          <span className="text-heading-cake" style={{ color: "#b85c5c" }}>
+          <span className="text-brand-burgundy" style={{ color: "#b85c5c" }}>
             <QuoteLeft />
           </span>
 
           <p
-            className="text-lg sm:text-2xl md:text-3xl text-heading-cake leading-snug"
+            className="text-lg sm:text-2xl md:text-3xl text- leading-snug"
             style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
           >
             Thoughtful design. Exceptional taste.{" "}
             <span
-              className="italic"
+              className="italic text-brand-gold"
               style={{
                 fontFamily: "'Brush Script MT', cursive, serif",
-                color: "#b85c5c",
               }}
             >
               Unforgettable moments.
@@ -291,7 +284,7 @@ export default function DreamSliceAbout() {
 
           {/* closing quote — mirrored */}
           <span
-            className="text-heading-cake rotate-180 inline-block"
+            className="text-brand-burgundy rotate-180 inline-block"
             style={{ color: "#b85c5c" }}
           >
             <QuoteLeft />

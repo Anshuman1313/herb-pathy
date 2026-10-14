@@ -27,20 +27,20 @@ const Nav1Cake = () => {
   },[])
 
   return (
-    <motion.nav className="fixed top-0 w-full left-0  shadow-sm bg-[#E6DCA2] z-50 overflow-hidden   px-6 md:px-10 flex items-center justify-between  h-16 md:h-20 font-crimson">
-
+    <motion.nav className="fixed top-0 w-full left-0   bg-brand-cream z-50 overflow-hidden   px-6 md:px-10 flex items-center justify-between  h-16 md:h-20 font-crimson">
+{/* <img src="dslogo.jpeg" width={100} height={100}/> */}
       <Link href="/" className="flex items-center gap-2 h-20 w-80 max-md:h-full max-md:w-50  ">
       <EyesLogo/>
       </Link>
 
-      <div className="hidden md:flex items-center gap-14 italic text-[#694125]">
+      <div className="hidden md:flex items-center gap-14 italic text-brand-burgundy">
         {navLinks.map((link, i) => (
           <HoverLink
             key={i}
             text={link.text}
             href={link.href}
             className="text-2xl  "
-            hoverColor="bg-[#694125]"
+            hoverColor="bg-brand-burgundy"
             isActive ={ pathname === link.href}
           />
         ))}

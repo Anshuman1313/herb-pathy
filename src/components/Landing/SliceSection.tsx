@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export default function SliceSection() {
     return (
-        <div className="w-full h-screen pt-10 px-20  pb-24  text-heading-cake ">
+        <div className="w-full h-screen pt-10 px-20  pb-24  text-brand-burgundy ">
 
             <div className="grid grid-cols-[1fr_1fr]  items-center relative ">
 
@@ -15,7 +15,7 @@ export default function SliceSection() {
                         whileInView={{ y: "0%", opacity: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: [0.83, 0, 0.17, 1] }}
-                        className="font-crimson italic text-[85px] leading-[0.95] tracking-tight"
+                        className="font-crimson italic text-[85px] leading-[0.95] tracking-tight text-brand-burgundy"
                     >
                         <div>We believe in the</div>
                         <div> art of baking</div>
@@ -28,7 +28,7 @@ export default function SliceSection() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="font-crimson italic text-3xl"
+                        className="font-crimson italic text-3xl text-brand-brown"
                     >
                        (500+ cakes crafted, 1000+ delights served)
                     </motion.div>
@@ -39,7 +39,7 @@ export default function SliceSection() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5 }}
-                        className="text-base font-inter leading-relaxed max-w-md text-neutral-700 "
+                        className="text-base font-inter leading-relaxed max-w-md text-brand-brown/80 "
                     >
                         Where every cake is crafted with passion and every bite of our
                         pastries and cookies is made with precision.
@@ -63,8 +63,8 @@ export default function SliceSection() {
               px-8 py-1 rounded-sm
               cursor-pointer
               transition-all duration-150 ease-linear
-              border border-heading-cake
-              text-heading-cake
+              border border-brand-brown
+              text-brand-burgundy
               bg-transparent
               active:scale-[0.96]
               select-none

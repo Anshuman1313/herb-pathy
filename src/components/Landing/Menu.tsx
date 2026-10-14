@@ -13,6 +13,9 @@ import MenuHero from "./MenuHero";
 import OsmosCircle from "../MotionDev/Osmos-Circle";
 import OsmosImage from "../MotionDev/OsmosImage";
 import HorizontalImagesStack from "../MotionDev/HorizontalImagesStack";
+import VerticalImagesStackMobile from "./VerticalImagesStackMobile";
+import { BakeryProductSection, Product } from "../corporateGifting/BakeryProductCards";
+import { LUXURY_PRODUCTS } from "@/app/corporate-gifting/page";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -56,15 +59,15 @@ const CHEESECAKES: MenuItem[] = [
 
 const BENTO: MenuItem[] = [
   { name: "Mini Chocolate Bento", desc: "Mini chocolate cake with a cute touch.", image: "https://images.unsplash.com/photo-1607478900766-efe13248b125?w=400&q=80" },
-//   { name: "Vanilla Celebration Bento", desc: "Classic vanilla cake with sprinkles.", image: "https://images.unsplash.com/photo-1590080875851-b19a566c3bd3?w=400&q=80" },
+  //   { name: "Vanilla Celebration Bento", desc: "Classic vanilla cake with sprinkles.", image: "https://images.unsplash.com/photo-1590080875851-b19a566c3bd3?w=400&q=80" },
   { name: "Red Velvet Bento", desc: "Red velvet cake with cream cheese frosting.", image: "https://images.unsplash.com/photo-1622621746668-59fb299bc4d7?w=400&q=80" },
   { name: "Custom Message Bento", desc: "Your message, your style, made just for you.", image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=400&q=80" },
-//   { name: "Birthday Theme Bento", desc: "Fun & colorful themes for birthdays.", image: "https://images.unsplash.com/photo-1558636508-e0969431e2d6?w=400&q=80" },
+  //   { name: "Birthday Theme Bento", desc: "Fun & colorful themes for birthdays.", image: "https://images.unsplash.com/photo-1558636508-e0969431e2d6?w=400&q=80" },
   { name: "Anniversary Special Bento", desc: "Celebrate love with our special bento cakes.", image: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=400&q=80" },
 ];
 
 const CUSTOM: MenuItem[] = [
-//   { name: "Birthday Cakes", desc: "Make birthdays extra special.", image: "https://images.unsplash.com/photo-1558636508-e0969431e2d6?w=600&q=80" },
+  //   { name: "Birthday Cakes", desc: "Make birthdays extra special.", image: "https://images.unsplash.com/photo-1558636508-e0969431e2d6?w=600&q=80" },
   { name: "Wedding Cakes", desc: "Elegant cakes for your big day.", image: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&q=80" },
   { name: "Anniversary Cakes", desc: "Celebrate your special moments.", image: "https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=600&q=80" },
 ];
@@ -406,6 +409,14 @@ function AnimatedDivider() {
     </div>
   );
 }
+const DESSERT_PRODUCTS: Product[] = [
+  { id: 1, name: "Double Chocolate Moon Pie", price: "$4.00", image: "/ds/desserts/ChocolateMoonPie.webp" },
+  { id: 2, name: "Chocolate Fudge Trifle", price: "$5.50", image: "/ds/desserts/ChocolateTrifleCup.webp" },
+  { id: 3, name: "Classic Chip Cookie", price: "$2.50", image: "/ds/desserts/Cookie.webp" },
+  { id: 4, name: "Butter Croissant", price: "$3.50", image: "/ds/desserts/Croissant.webp" },
+  { id: 5, name: "Vanilla Bean Cupcake", price: "$3.00", image: "/ds/desserts/Cupcake.webp" },
+  { id: 6, name: "French Macaron", price: "$2.00", image: "/ds/desserts/Macaron.webp" },
+];
 
 // ─── Main export ──────────────────────────────────────────────────────────────
 
@@ -425,7 +436,7 @@ export default function DreamSliceMenuSection() {
 
       <section className="relative  overflow-hidden font-crimson noise-bg pt-25">
         {/* <MenuHero/> */}
-       
+
 
         {/* Ambient blobs */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-rose-100 rounded-full blur-[120px] opacity-50 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
@@ -433,60 +444,60 @@ export default function DreamSliceMenuSection() {
         <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-amber-50 rounded-full blur-[140px] opacity-60 pointer-events-none" />
 
         {/* ── Hero ── */}
-        <div className="relative z-10 text-center  ">
+        <div className="relative z-10 text-center hidden ">
 
-    
+
 
           {/* Title — char-by-char spring reveal */}
           <div className="relative w-full h-120 bg--200 grid place-items-center">
 
- {/* <div className="absolute size-full  grid place-items-center">
+            {/* <div className="absolute size-full  grid place-items-center">
         <img className="size-130" src={"/circle-bars.svg"}/>
         </div> */}
-        <div className="absolute z-0"> 
+            <div className="absolute z-0">
 
-        <OsmosCircle circleClassName="stroke-[#fdf6f0] pathClassName"/>
-        </div>
+              <OsmosCircle circleClassName="stroke-[#fdf6f0] pathClassName" />
+            </div>
 
             <div className="pt-25">
-      
-          {/* Eyebrow */}
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", ...SPRING_GENTLE }}
-            className="font-crimson text-[10px] tracking-[0.4em] uppercase text-rose-400 block mb-4"
-          >
-            Custom Cakes & Artisanal Desserts
-          </motion.span>
-          <h1 className="font-crimson text-6xl md:text-8xl text-heading-cake italic mb-1 overflow-hidden">
-            <SplitText text="Dream Slice" delay={0.1} staggerDelay={0.04} />
-          </h1>
-          <h1 className="font-crimson text-6xl md:text-8xl text-heading-cake overflow-hidden">
-            <SplitText text="Studio" delay={0.5} staggerDelay={0.05} />
-          </h1>
-          
-          {/* Tagline */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", ...SPRING_GENTLE, delay: 0.8 }}
-            className="mt-5 font-crimson italic text-rose-400 text-xl md:text-2xl"
-          >
-            Crafted to Perfection
-          </motion.p>
 
-          {/* Sweep line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ type: "spring", ...SPRING_GENTLE, delay: 1 }}
-            style={{ originX: 0.5 }}
-            className="mx-auto mt-6 h-px w-40 bg-linear-to-r from-transparent via-rose-300 to-transparent"
-          />
-        </div>
+              {/* Eyebrow */}
+              <motion.span
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: "spring", ...SPRING_GENTLE }}
+                className="font-crimson text-[10px] tracking-[0.4em] uppercase text-rose-400 block mb-4"
+              >
+                Custom Cakes & Artisanal Desserts
+              </motion.span>
+              <h1 className="font-crimson text-6xl md:text-8xl text-heading-cake italic mb-1 overflow-hidden">
+                <SplitText text="Dream Slice" delay={0.1} staggerDelay={0.04} />
+              </h1>
+              <h1 className="font-crimson text-6xl md:text-8xl text-heading-cake overflow-hidden">
+                <SplitText text="Studio" delay={0.5} staggerDelay={0.05} />
+              </h1>
+
+              {/* Tagline */}
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ type: "spring", ...SPRING_GENTLE, delay: 0.8 }}
+                className="mt-5 font-crimson italic text-rose-400 text-xl md:text-2xl"
+              >
+                Crafted to Perfection
+              </motion.p>
+
+              {/* Sweep line */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ type: "spring", ...SPRING_GENTLE, delay: 1 }}
+                style={{ originX: 0.5 }}
+                className="mx-auto mt-6 h-px w-40 bg-linear-to-r from-transparent via-rose-300 to-transparent"
+              />
             </div>
           </div>
+        </div>
 
 
         {/* ── Signature Cakes ── */}
@@ -505,28 +516,43 @@ export default function DreamSliceMenuSection() {
 
         {/* <AnimatedDivider /> */}
 
-        <OsmosImage/>
+        <OsmosImage />
+        <BakeryProductSection
+          id="luxury"
+          heading="Luxury Cakes"
+          subheading="Indulgence, layered to perfection."
+          products={LUXURY_PRODUCTS}
+        />
+        <BakeryProductSection
+          id="desserts"
+          heading="Desserts"
+          subheading="Sweet bites made fresh every morning."
+          products={DESSERT_PRODUCTS}
+        />
 
         {/* ── Dry / Tea Cakes ── */}
         <div className="relative z-10 px-6 md:px-12 lg:px-24 py-16">
           <SectionHeading sub="Perfect for Tea Time">Dry Cakes</SectionHeading>
-      <div className="w-full grid place-items-center py-5">
+          <div className="w-full grid place-items-center py-5 max-md:hidden">
 
-       <HorizontalImagesStack Items = {DryCakes} />
-      </div>
-            
-         
+            <HorizontalImagesStack Items={DryCakes} />
+          </div>
+          <VerticalImagesStackMobile Items={DryCakes} />
+
+
         </div>
-        
+
 
         {/* ── Cheesecakes ── */}
         <div className="relative z-10 bg-linear-to-b from-rose-50/80 to-[#fdf6f0] py-20">
           <div className="px-6 md:px-12 lg:px-24">
             <SectionHeading sub="The Silky Collection">Cheesecakes</SectionHeading>
-            <div className="w-full grid place-items-center">
+            <div className="w-full grid place-items-center max-md:hidden">
 
-       <HorizontalImagesStack Items = {Cheesecakes} />
+              <HorizontalImagesStack Items={Cheesecakes} />
             </div>
+            <VerticalImagesStackMobile Items={Cheesecakes} />
+
 
             {/* <motion.div
               variants={containerVariants}
@@ -543,10 +569,12 @@ export default function DreamSliceMenuSection() {
         {/* ── Bento Cakes ── */}
         <div className="relative z-10 px-6 md:px-12 lg:px-24 py-16">
           <SectionHeading sub="Perfect for Gifting">Bento Cakes</SectionHeading>
-           <div className="w-full grid place-items-center">
+          <div className="w-full grid place-items-center max-md:hidden">
 
-       <HorizontalImagesStack Items = {BentoCake} />
-            </div>
+            <HorizontalImagesStack Items={BentoCake} />
+          </div>
+          <VerticalImagesStackMobile Items={BentoCake} />
+
           {/* <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -633,7 +661,7 @@ export default function DreamSliceMenuSection() {
 }
 
 
-const DryCakes  = [
+const DryCakes = [
   {
     title: "Banana Walnut Cake",
     img: "DryCake/Banana Walnut Cake_converted",
@@ -654,7 +682,7 @@ const DryCakes  = [
     title: "Marble Cake",
     img: "DryCake/Marble Cake_converted",
   },
- 
+
   {
     title: "Plum Cake",
     img: "DryCake/Plum Cake_converted",

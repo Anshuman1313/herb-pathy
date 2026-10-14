@@ -100,21 +100,21 @@ const y = useTransform(progress, [start - 0.1, end], [40, 0])
       style={{ opacity, y }}
       className="flex flex-col justify-center pl-[20%]  f space-y-6"
     >
-      <p className="text-sm tracking-[0.2em] text-neutral-400 uppercase">
+      <p className="text-sm tracking-[0.2em] text-brand-gold uppercase">
         DreamSlice Studio
       </p>
 
-      <h2 className="text-5xl leading-tight font-serif text-neutral-800">
+      <h2 className="text-5xl leading-tight font-serif text-brand-burgundy">
         {data.heading}
       </h2>
 
-      <p className="text-lg text-neutral-500 leading-relaxed">
+      <p className="text-lg text-brand-brown leading-relaxed">
         {data.sub}
       </p>
 
-      <div className="w-12 h-[1px] bg-neutral-300" />
+      <div className="w-12 h-[1px] bg-brand-gold" />
 
-      <p className="text-sm text-neutral-400 tracking-wide">
+      <p className="text-sm text-brand-brown/80 tracking-wide">
         {data.meta}
       </p>
     </motion.div>

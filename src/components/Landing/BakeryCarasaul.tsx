@@ -10,7 +10,7 @@ export function BakeryCarousel() {
   ));
 
   return (
-    <section className="w-full h-full pt-40 pb-24">
+    <section className="w-full h-full pt-40 pb-24 ">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -19,12 +19,12 @@ export function BakeryCarousel() {
         viewport={{ once: true }}
         className="px-20 mb-14"
       >
-        <h2 className="text-3xl md:text-8xl text-center font-semibold italic  font-crimson tracking-tight text-heading-cake leading-tighter">
+        <h2 className="text-3xl md:text-8xl text-center font-semibold italic  font-crimson tracking-tight text-brand-burgundy leading-tighter">
          <div>Freshly baked </div> 
           for your sweetest moments
         </h2>
 
-        <p className="mt-4 text-neutral-500 text-center text-lg md:text-xl  font-crimson">
+        <p className="mt-4 text-brand-brown/80 text-center text-lg md:text-xl  font-crimson">
           Cakes, breads, cookies and everything in between — made daily,
           crafted with love.
         </p>

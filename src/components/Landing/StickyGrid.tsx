@@ -2,16 +2,16 @@ import React from "react"
 
 const StickyGrid = () => {
   return (
-    <div className="w-full px-5 md:px-60">
+    <div className="w-full px-5 md:px-60 bg-brand-cream">
         <div className="max-w-6xl py-20 mx-auto flex flex-col items-center text-center gap-6">
         
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-brand-burgundy">
           Crafted With Passion & Precision
         </h2>
 
         {/* Subheading */}
-        <p className="text-sm md:text-base text-neutral-600 max-w-2xl">
+        <p className="text-sm md:text-base  max-w-2xl text-brand-brown/80">
       From artisan cakes to delicate pastries, every creation is crafted to deliver comfort, flavor, and a sense of indulgence.
         </p>
       </div>
@@ -21,17 +21,17 @@ const StickyGrid = () => {
           className="grid grid-cols-1 md:grid-cols-2 border-b"
         >
           {/* LEFT (Sticky Content) */}
-          <div className="md:sticky top-15 self-start py-10 bg-white ">
+          <div className="md:sticky top-15 self-start py-10  ">
             <div className="flex items-start gap-3">
-              <div className="size-10 flex items-center justify-center rounded-md bg-black text-white text-sm font-semibold">
+              <div className="size-10 flex items-center justify-center rounded-md bg-brand-burgundy text-brand-cream text-sm font-semibold">
                 {item.badge}
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-neutral-800 max-w-[30ch]">
+                <h2 className="text-xl font-semibold text-brand-burgundy max-w-[30ch]">
                   {item.heading}
                 </h2>
-                <p className="mt-3 text-neutral-600 max-w-[40ch]">
+                <p className="mt-3 text-brand-brown/80 max-w-[40ch]">
                   {item.subheading}
                 </p>
               </div>
