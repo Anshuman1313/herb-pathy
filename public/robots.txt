@@ -1,0 +1,14 @@
+# Allow all search engines to crawl public pages
+User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /tmp/
+Disallow: /test/
+
+# Block specific file types if needed (optional)
+Disallow: /*.pdf$
+Disallow: /*.doc$
+
+# Sitemap location
+Sitemap: https://www.dreamslicestudio.com/sitemap.xml

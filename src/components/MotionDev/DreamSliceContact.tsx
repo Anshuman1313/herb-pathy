@@ -174,11 +174,9 @@ export default function DreamSliceContact() {
 
   return (
     <div
-      className="min-h-screen font-serif overflow-x-hidden"
+      className="min-h-screen font-serif overflow-x-hidden pt-30"
       // style={{ background: "linear-gradient(160deg,#fdf6f0 0%,#fde8e8 50%,#fdf0f5 100%)" }}
     >
-      {/* ── navbar placeholder ── */}
-      <div className="h-20 border-b border-[#f0d8d8]/60" />
 
       {/* ── hero headline ────────────────────────────────────────────── */}
       <section className="pt-10 sm:pt-2 pb-8 sm:pb-10 text-center px-4 sm:px-6">
@@ -186,7 +184,7 @@ export default function DreamSliceContact() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-[10px] sm:text-lg tracking-[0.35em] text-heading-cake mb-3  font-sans font-medium"
+          className="text-[10px] sm:text-lg tracking-[0.35em] text-brand-gold  mb-3  font-sans font-medium"
         >
           + &nbsp; CONTACT US &nbsp; +
         </motion.p>
@@ -195,13 +193,13 @@ export default function DreamSliceContact() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-heading-cake leading-tight px-2"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-burgundy leading-tight px-2"
           style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}
         >
           Let's create something{" "}
           <span
-            className="italic"
-            style={{ fontFamily: "'Brush Script MT', cursive, serif", color: "#b85c5c" }}
+            className="italic text-brand-gold"
+            style={{ fontFamily: "'Brush Script MT', cursive, serif" }}
           >
             sweet
           </span>{" "}

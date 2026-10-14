@@ -1,12 +1,12 @@
-import Nav1Cake from "@/components/Landing/1Nav"
-import Footer from "@/components/Landing/Footer"
+import Nav2Cake from "@/components/Landing/2Nav"
+import {Footer} from "@/components/corporateGifting/dream-slice-landing (1)";
 import DreamSliceMenuSection from "@/components/Landing/Menu"
 import MenuSection from "@/components/Landing/MenuSection"
 
 const page = () => {
   return (
     <>
-    <Nav1Cake/>
+   <Nav2Cake/>
     <DreamSliceMenuSection/>
         <Footer/>
 

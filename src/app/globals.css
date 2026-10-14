@@ -24,6 +24,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-background-cake: var(--background-cake);
+    /* Brand colors */
+  --color-brand-burgundy: var(--brand-burgundy);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-beige: var(--brand-beige);
+  --color-brand-brown: var(--brand-brown);
+
+
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -72,6 +80,14 @@
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --background-cake: oklch(0.922 0.014 88.688);
+/* Brand palette */
+  --brand-burgundy: oklch(34.81% 0.11017 14.052);
+  --brand-gold: oklch(0.677 0.120 39.828);
+  --brand-cream: oklch(95.173% 0.03243 85.468);
+  --brand-beige: oklch(0.876 0.067 40.808);
+  --brand-brown: oklch(0.298 0.021 26.655);
+
+
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

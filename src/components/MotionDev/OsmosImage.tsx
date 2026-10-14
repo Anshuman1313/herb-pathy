@@ -125,14 +125,14 @@ const OsmosImage = () => {
   return (
     <>  
 
-    <div className="relative h-180   w-full  overflow-hidden  ">
-       <div className="absolute top-[58%] left-1/2 w-[50%]  text-5xl  text-center text-heading-cake  -translate-x-1/2 ">
+    <div className="relative h-100  w-full  overflow-hidden  ">
+       <div className="absolute top-1/4 left-1/2 w-[50%]  text-5xl max-md:text-3xl max-md:w-[70%]  text-center text-heading-cake  -translate-x-1/2 ">
        Freshly baked with premium ingredients and balanced sweetness, our cakes bring comfort, flavor, and a homemade touch in every slice.
        {/* <TextReveal>Magic UI will change the way you design.</TextReveal> */}
        </div>
       <div className="h-full w-full ">
 
-    <div ref={stageRef} className='absolute top-1/2  right-1/2 translate-x-1/2 -translate-y-[18.5%] overflow-hidden   size-780 border-0  animate-[spin_90s_linear_infinite] origin-center '
+    <div ref={stageRef} className='absolute hidden top-1/2  right-1/2 translate-x-1/2 -translate-y-[18.5%] overflow-hidden   size-780 border-0  animate-[spin_90s_linear_infinite] origin-center '
      onClick={() => setPaused(!paused)}
      style={{
         animationPlayState: paused ? "paused" : "running",
